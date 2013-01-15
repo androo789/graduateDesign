@@ -1,0 +1,496 @@
+%\begin{document}
+\chapter{信道编码代数基础}
+%==========================================================================
+\thispagestyle{empty}
+
+\section{群\cite{JINSHIDAISHU}}
+令$\mathbf{G}$是一个集合，现规定$\mathbf{G}$上的二元运算$"*"$的规则：
+
+对$\mathbf{G}$中的每一对元素$a$和$b$，在$\mathbf{G}$中指定一个唯一确定的第三个元素$c=a*b$。当这样的二元运算$"*"$定义在$\mathbf{G}$上时，我们就称在$"*"$运算下$\mathbf{G}$是封闭的。若对$\mathbf{G}$中的任意元素$a,b,c$有
+
+\begin{eqnarray}
+  a*(b*c)=(a*b)*c  
+  \label{equ:2.1}
+\end{eqnarray}
+则称$\mathbf{G}$上的二元运算$"*"$是结合的。
+
+\begin{ioadefine}
+  设$\mathbf{G}$是非空集合，并在$\mathbf{G}$上定义了一种运算$"*"$，如果满足以下条件就称做群：
+  \begin{enumerate}
+    \item \textbf{满足封闭性}\quad
+      若$a$和$b$为集合$\mathbf{G}$中的任意元素，即$a\in\mathbf{G},b\in\mathbf{G},$恒有
+      \begin{eqnarray}
+        a*b=c\in\mathbf{G}
+        \label{equ:2.2}
+      \end{eqnarray}
+    \item \textbf{满足结合律}\quad
+      对任意$a\in\mathbf{G},b\in\mathbf{G},c\in\mathbf{G},$
+      \begin{eqnarray}
+     a*(b*c)=(a*b)*c    
+        \label{equ:2.3}
+      \end{eqnarray}
+    \item \textbf{存在恒等元}\quad 对任意$a\in\mathbf{G}$，有
+      \begin{eqnarray}
+        a*a^{-1}=e
+        \label{equ:2.4}
+      \end{eqnarray}
+  \end{enumerate}
+  其中，$a^{-1}\in\mathbf{G}$，且称为$a$的逆元素。  
+\end{ioadefine}
+例如，整数中，任意两个整数相加还是一个整数，以此满足封闭性；显然也满足结合律；任意一个非零整数$Z$的逆元素是$-Z$，$Z+(-Z)=0$,所以恒等元是0；则整数在实数相加下是一个群。但整数在实数乘法下就不能构成一个群。
+
+若群$\mathbf{G}$中，$a\in\mathbf{G},b\in\mathbf{G}$，有
+
+\begin{eqnarray}
+a*b=b*a  
+  \label{equ:2.5}
+\end{eqnarray}
+则称群为可交换群或阿贝尔群。
+\begin{ioatheorem}
+  群$\mathbf{G}$的恒等元是唯一的，每个元素的逆元素也是唯一的。
+  \label{theorem:2.1}
+\end{ioatheorem}
+\begin{ioatheorem}
+  令$\mathbf{H}$是$\mathbf{G}$的非空子集。若$\mathbf{H}$在$\mathbf{G}$的群运算下是封闭的且满足群的所有条件，就称$\mathbf{H}$为$\mathbf{G}$的子群。
+  \label{theorem:2.2}
+\end{ioatheorem}
+例如，偶数是整数的一个非空子集。同样可以证明偶数在实数加法下也是一个群，所以偶数时整数的一个子群。
+\begin{ioatheorem}
+  群中元素的个数称为群的阶。
+  \label{theorem:2.3}
+\end{ioatheorem}
+%**************************************************************************
+\section{域\cite{JINSHIDAISHU}}
+域就是一个集合，在其中可以进行加、减、乘、除而不会超出该集合。加法和乘法都必须满足交换律、结合律和分配律，正式定义：
+\begin{ioadefine}
+  令$\mathbf{F}$是一个集合，其上定义了两个二元运算，称作加法$"+"$和乘法$"\cdot"$。满足下述条件时，就称集合$\mathbf{F}$和两个运算$"+"$和$"\cdot"$是域：
+  \begin{enumerate}
+    \item $\mathbf{F}$关于加法运算构成阿贝尔群；
+    \item $\mathbf{F}$中的非零元素在乘法下构成阿贝尔群，其恒等元素以1表示；
+    \item 对加法和乘法分配律成立
+      \begin{eqnarray}
+     a\cdot(b+c)=a\cdot b+a\cdot c     
+        \label{equ:2.6}
+      \end{eqnarray}
+  \end{enumerate}
+\end{ioadefine}
+根据定义可得出，一个域至少由两个元素即加法恒等元素和乘法恒等元素组成。域中元素的个数叫做域的阶。有限个元素的域叫做有限域。在域中，元素$a$的加法逆元素用$-a$表示，乘法逆元素用$a^{-1}$表示。域的一些基本性质可以从域的定义导出。
+\begin{description}
+  \item [性质1:~]对域中的每个元素$a\cdot 0=0\cdot a=0$
+  \item [性质2:~]对域中任意两个非零元素$a$和$b$，$a\cdot b\neq 0$
+  \item [性质3:~]$a\cdot b=0$且$a\neq 0$，这意味着$b=0$
+  \item [性质4:~]对域中任意两个元素$a$和$b$，$-(a\cdot
+    b)=(-a)\cdot b=a\cdot (-b)$
+  \item [性质5:~]对$a\neq 0,a\cdot b=a\cdot c$，可推出$b=c$
+\end{description}
+
+一个重要的概念--\textbf{素域}
+
+令$p$为素数，不难证明，整数集$\{0,1,2,\cdots
+,p-1\}$在模$p$加法下是阿贝尔群，非零集合$\{1,2,\cdots
+,p-1\}$在模$p$乘法下也构成阿贝尔群，由于模$p$加法和模$p$乘法是可分配的，所以集合$\{0,1,2,\cdots
+,p-1\}$是阶为$p$的域。由于这个域由素数$p$构成，故称为素域并以$GF(p)$表示。对于$p=2$，我们得到二元域$GF(2)$。例如$p=7$，模7加法和模7乘法由表\ref{tab:table2.1}和表\ref{tab:table2.2}给出。整数集合$\{0,1,2,3,4,5,6\}$在模7加法和模7乘法下是一个有7个元素的域，以$GF(7)$表示。
+\begin{table}[htb]
+  \centering
+  \caption{模7加法}
+  \label{tab:table2.1}
+  \begin{tabular}{|C{2cm}||C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+    \hline
+模7加&0&1&2&3&4&5&6\\
+    \hline
+    \hline
+    0&0&1&2&3&4&5&6\\
+    \hline
+    1&1&2&3&4&5&6&0\\
+    \hline
+    2&2&3&4&5&6&0&1\\
+    \hline
+    3&3&4&5&6&0&1&2\\
+    \hline
+    4&4&5&6&0&1&2&3\\
+    \hline
+    5&5&6&0&1&2&3&4\\
+    \hline
+    6&6&0&1&2&3&4&5\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[htb]
+  \centering
+  \caption{模7乘法}
+  \label{tab:table2.2}
+  \begin{tabular}{|C{2cm}||C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+    \hline
+模7乘&0&1&2&3&4&5&6\\
+    \hline
+    \hline
+    0&0&0&0&0&0&0&0\\
+    \hline
+    1&0&1&2&3&4&5&6\\
+    \hline
+    2&0&2&4&6&1&3&5\\
+    \hline
+    3&0&3&6&2&5&1&4\\
+    \hline
+    4&0&4&1&5&2&6&3\\
+    \hline
+    5&0&5&3&1&6&4&2\\
+    \hline
+    6&0&6&5&4&3&2&1\\
+    \hline
+  \end{tabular}
+\end{table}
+
+对于任何素数$p$都存在一个有$p$个元素的有限域。对于任何正整数$m$，可以将素域$GF(p)$扩展成有$p^m$个元素的域，称它为$GF(p)$的扩域，并以$GF(p^m)$表示。而且以证明，任意有限域的阶是素数的幂次。有限域以其发现者命名为伽罗华域。大部分代数编码理论，码的构造和译码都是围绕有限域建立的。
+
+研究$q$个元素的有限域$GF(q)$。因为在加法下域是封闭的，两个元素之和也是域中的元素，即必存在两个正整数$m$和$n$，$m<n$，使
+\begin{eqnarray}
+  \sum_{i=1}^k 1=k\neq 0 \;, \sum_{i=1}^p 1 =0
+  \label{2.7}
+\end{eqnarray}
+\begin{ioatheorem}
+  有限域的特征$\lambda$是素数
+  \label{theorem:2.4}
+\end{ioatheorem}
+\begin{ioatheorem}
+  令$a$是有限域$GF(q)$中的非零元素，则$a^{q-1}=1$。
+  \label{theorem:2.5}
+\end{ioatheorem}
+\begin{ioatheorem}
+  令$a$是有限域$GF(q)$中的非零元素，令$n$是$a$的阶，则$q-1$能被$n$除尽。
+  \label{theorem:2.6}
+\end{ioatheorem}
+在有限域$GF(q)$中，若非零元素$a$的阶是$q-1$，就称$a$是本原的。所以，本原元素的幂次生成$GF(q)$的所有非零元素，每个有限域都有本原元素。若在群中存在一个这样的元素，其各次幂构成整个群，就称该群是循环的。若$a$为循环群中的本原元素，使$a^n=e$的最小整数$n$为循环群的级。
+
+\textbf{有限循环群的性质}
+\begin{description}
+  \item[性质1：]若$a\in
+    \mathbf{G}$是$n$级元素，则$a^m=e$的充要条件是$m$可以被$n$除尽。
+  \item[性质2：]若$a$是$n$级元素，则元素$a^k$的级为$\frac{n}{(k,n)}$\footnote{$(k,n)$表示$k$除以$n$后的余数}。
+\end{description}
+%**************************************************************************
+\section{伽罗华域\cite{XiangXi_GF}}
+在数字通信系统中用到的伽罗华域通常是二元域$GF(2)$及其扩域$GF(2^m)$，所以这里仅限于讨论二元域及扩域。
+\begin{ioadefine}
+  不能分解因式的多项式称为既约多项式。若$GF(2)$上的$m$次多项式$f(x)$不能被$GF(2)$上任何次数小于$m$，但大于零的多项式除尽，就称它是$GF(2)$上的既约多项式。
+\end{ioadefine}
+  \begin{ioaexample} 
+    $x^3+x+1=0$，由模$m$加法可得$x^3=x+1,x=x^3+1$，若$\alpha$是多项式的根，则$\alpha$的所有幂次为:
+    \begin{table}[htb]
+      \centering
+      \caption{$GF(2^3)$所有幂次}
+      \label{tab:table2.3}
+      \begin{tabular}{|C{3cm}|C{8cm}|C{3cm}|}
+        \hline
+        幂表达式&多项式表达式&矢量表达式\\
+        \hline
+        \hline
+        0&0&000\\
+        \hline
+        1&1&001\\
+        \hline
+        $\alpha^1$&$\alpha^1$&010\\
+        \hline
+        $\alpha^2$&$\alpha^2$&100\\
+        \hline
+        $\alpha^3$&$\alpha+1$&011\\
+        \hline
+        $\alpha^4$&$\alpha\cdot \alpha^3=\alpha\cdot (\alpha+1)=\alpha^2+\alpha$&110\\
+        \hline
+        $\alpha^5$&$\alpha\cdot \alpha^4=\alpha\cdot
+        (\alpha^2+\alpha)=\alpha^2+\alpha+1$&111\\
+        \hline
+        $\alpha^6$&$\alpha\cdot \alpha^5=\alpha\cdot (\alpha^2+\alpha+1)=\alpha^2+1$&101\\
+        \hline
+        $\alpha^7$&$\alpha\cdot \alpha^6=\alpha\cdot (\alpha^2+1)=1$&001\\
+        \hline
+      \end{tabular}
+    \end{table}
+  \end{ioaexample}
+以上分析可知，$\alpha$的所有幂次共有七个非零元素，再加上0元素，构成了含有八个元素的域$GF(2^3)$，它是$GF(2)$的三次扩域。可见，$x^3+x+1$是既约多项式。那么，是不是凡是二元域上的既约多项式的根都能构成$m$次扩域$GF(2^m)$。为了说明这个问题，再看一个例子。
+\begin{ioaexample}
+  如：$x^4+x^3+x^2+x+1$
+  \begin{description}
+    \item $\alpha^0=1\Rightarrow 0001$
+    \item $\alpha^1=\alpha^1\Rightarrow 0010$
+    \item $\alpha^2=\alpha^2\Rightarrow 0100$
+    \item $\alpha^3=\alpha^3\Rightarrow 1000$
+    \item $\alpha^4=\alpha^3+\alpha^2+\alpha+1\Rightarrow 1111$
+    \item $\alpha^5=1\Rightarrow 0001$
+    \item $\alpha^6=\alpha\Rightarrow 0010$
+  \end{description}
+\end{ioaexample}
+我们发现，$\alpha$的所有幂次仅有五个元素，加上零元素共有6个，而不是$2^4$个，所以$x^4+x^3+x^2+x+1$不能构成$GF(2^4)$扩域。
+
+此外，$2^{15}=1$表明$\alpha$还是$x^{15}+1$的根，因此，既约多项式$x^4+x+1$能够被多项式$x^{15}+1$整除，而不能被其它次数小于15的多项式整除。
+
+\textbf{归纳：}$GF(2^m)$上的$m$次既约多项式有两大类：一类是能被$x^n+1$整除，但不能被$x^s+1$整除，其中$n=2^{m-1},s<n$。它的根是$GF(2^m)$扩域的本原元素，这一类多项式称为本原多项式。另一类既约多项式技能被$x^n+1$整除，又能被$x^s+1$整除，称为非本原多项式。只有本原多项式才能构成$GF(2^m)$域。
+
+伽罗华域上运算与实数域上的运算不同，其主要区别\cite{XiangXi_GF}是：
+\begin{enumerate}
+  \item
+    域上加减运算等同(对加法特征为2的有限域)，加减运算以域元素的矢量形式进行，加减运算为域元素的矢量表示对应位模2加；
+  \item
+    域上元素间的乘除运算以本原元素的形式进行，乘除运算为本原元素的幂次模$(2^m-1)$加减；
+  \item 加法恒元乘任何数等于加法恒元；任何数与加法恒元相加，其值不变；
+  \item 任何数与乘法恒元相乘，其值不变；
+  \item
+    域元素的指数运算以域元素的指数形式进行，运算规则与实数域上相同，但结果需进行模$2^m-1$运算。
+\end{enumerate}
+由上面分析可知，要实现域上运算，至少需要域元素的两种表示形式，即域元素的指数表示形式和矢量表示形式。
+
+因为通过指数形式和矢量形式才能实现域上运算，而一个码符号取自$GF(2^m)$的差错控制系统，故必须选择其中一种表示方法作为系统数据处理的基本形式，域上运算实现的另一表示形式则通过基本形式转换来得到。
+
+为了提高域运算处理速度，一般采用查表的方法实现基本形式到域运算实现所需的另一形式之间的转换，即系统为了完成域上运算，形成了域元素矢量形式$\leftrightarrow$指数形式转换对照表\footnote{可通过迭代法生成},这就是二表法。
+
+$GF(2^m)$上共有元素$2^m$个：加法恒元0、乘法恒元1及$\alpha^i
+(i=1,2,\cdots
+,2^m-2)$。由于加法恒元0无法用指数形式表示，该算法就是选用域元素的矢量形式(二进制$m$)作为数据处理的基本形式。此时，根据域运算原理，两域元素相加就是两域元素对应位模2加；两非零元素相乘(除)则要利用域元素矢量形式$\leftrightarrow$指数形式转换表，转换为指数形式进行，最后再将结果转换为矢量形式存放。同理，域上指数运算也需要查表转换进行。
+%&=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=
+\section{矢量空间\cite{Coding_Theory}}
+\begin{ioadefine}
+  设$\mathbf{F}$是一个域，$\mathbf{V}$是一个非空集合。设在$\mathbf{V}$中定义了一个二元加法运算$"+"$，即对任意$\mathbf{u,v}\in
+  \mathbf{V}$，都有$\mathbf{u}+\mathbf{v}\in
+  \mathbf{V}$；同时还定义了一个$\mathbf{F}$中的元素乘以$\mathbf{V}$中元素的乘法运算$"\cdot"$，即对任意$a\in
+  \mathbf{F}$和任意$\mathbf{v}\in V$，都有$a\cdot\mathbf{v}\in
+  \mathbf{V}$。如果下述运算规则成立，则称$V$是域$F$上的一个向量空间。
+\begin{enumerate}
+  \item
+    $\mathbf{V}$关于加法运算$"+"$是一个交换群\footnote{这个群通常称为$\mathbf{V}$的加法群}
+  \item 对任意$a\in \mathbf{F}$和任意$\mathbf{u,v}\in \mathbf{V}$，都有
+    \begin{eqnarray}
+      a\cdot(\mathbf{u}+\mathbf{v})=a\cdot\mathbf{u}+a\cdot\mathbf{v}
+    \end{eqnarray}
+  \item 对任意$a,b\in \mathbf{F}$和任意$\mathbf{v}\in \mathbf{V}
+    $，都有
+    \begin{eqnarray}
+      (a+b)\cdot\mathbf{v}=a\cdot\mathbf{v}+b\cdot\mathbf{v}
+    \end{eqnarray}
+  \item 对任意$a,b\in \mathbf{F}$和任意$\mathbf{v}\in \mathbf{V}$，都有
+    \begin{eqnarray}
+      a\cdot(b\cdot\mathbf{v})=(ab)\cdot\mathbf{v}
+    \end{eqnarray}
+  \item 对任意$\mathbf{v}\in \mathbf{V}$，都有
+    \begin{eqnarray}
+      1\cdot\mathbf{v}=\mathbf{v}
+    \end{eqnarray}
+\end{enumerate}
+其中，$1$是域$\mathbf{F}$的乘法单元。
+
+通常，我们将$\mathbf{V}$中的元素称为向量，并将$\mathbf{V}$的加法群的零元素称为零向量，记为$\mathbf{0}$。域$\mathbf{F}$中的元素称为纯量。
+\end{ioadefine}
+
+下面介绍非常有用的，在编码理论中起着中心作用的$GF(2)$上的矢量空间。研究$n$个分量的有序序列。
+\[
+(a_0,a_1,\cdots a_{n-1})
+\]
+其中每个分量$a_i$是二元域$GF(2)$上中的元素\footnote{两元素即$a_i=0$或$a_i=1$}。这个序列一般称为$GF(2)$上的$n$重。由于每个$a_i$有两种选择，我们可以构造$2^n$个不同的$n$重。令$v_n$表示$2^n$个不同$n$重集合。现在，我们在$v_n$上定义一个加法：对$v_n$中任何$\mathbf{u}=(u_0,u_1,\cdots
+u_{n-1})$和$\mathbf{v}=(v_0,v_1,\cdots v_{n-1})$，
+\begin{eqnarray}
+  \mathbf{u}+\mathbf{v}=(u_0+v_0,u_1+v_1,\cdots u_{n-1}+v_{n-1})
+  \label{equ:shiliang1}
+\end{eqnarray}
+其中$u_i+v_i$按模2进行相加。显然$\mathbf{u}+\mathbf{v}$也是$GF(2)$上的$n$重。因此$v_n$在\ref{equ:shiliang1}式所定义的加法下是封闭的。容易证明，$v_n$在\ref{equ:shiliang1}式定义的加法下是可交换群。
+
+下面定义以$GF(2)$中元素$a$数称$v_n$中一个$n$重$\mathbf{v}$为：
+\begin{eqnarray}
+  a\cdot(v_0,v_1,\cdots v_{n-1})=(a\cdot v_0,a\cdots v_1,\cdots a\cdot
+  v_{n-1})
+  \label{equ:shiliang2}
+\end{eqnarray}
+其中$a\cdot v_i$按模2乘法进行。显然，$a\cdot(v_0,v_1,\cdot
+v_{n-1})$也是$v_n$中的$n$重。若$a=1$，则：
+\begin{eqnarray}
+  1\cdot(v_0,v_1,\cdots v_{n-1})=(1\cdot v_0,1\cdot v_1,\cdots 1\cdot
+  v{n-1})=(v_0,v_1,\cdots v_{n-1})
+  \label{equ:shiliang3}
+\end{eqnarray}
+容易证明，式\ref{equ:shiliang1}和\ref{equ:shiliang2}定义的矢量加法和数乘分别满足分配律和结合律。所以，$GF(2)$上所有$n$重的集合$v_n$形成$GF(2)$上的一个矢量空间。
+
+$\mathbf{V}$是域$\mathbf{F}$上的一个矢量空间，可能会碰到$\mathbf{V}$的一个子集$\mathbf{S}$也是$\mathbf{F}$上的一个矢量空间，这种子集称作是$\mathbf{V}$的子空间。
+
+\begin{ioatheorem}
+  令$\mathbf{S}$是域$\mathbf{F}$上矢量空间$\mathbf{V}$的一个非空子集，则当$\mathbf{S}$满足下述条件时它是$\mathbf{V}$的一个子空间：
+  \label{theorem:2.7}
+  \begin{enumerate}
+    \item
+      对$\mathbf{S}$中的任意两个矢量$\mathbf{u}$和$\mathbf{v}$，$\mathbf{u}+\mathbf{v}$也是$\mathbf{S}$中的矢量。
+    \item
+      对$\mathbf{F}$中的任意元素$a$和$\mathbf{S}$中的任意矢量$\mathbf{v}$，$a\cdot\mathbf{u}$也在$\mathbf{S}$中。
+  \end{enumerate}
+  \label{}
+\end{ioatheorem}
+\begin{ioatheorem}
+  令$v_1,v_2,\cdots
+  v_k$是域$\mathbf{F}$上矢量空间$\mathbf{V}$的$k$个矢量，则$v_1,v_2,\cdots
+  v_k$的所有线性组合构成$\mathbf{V}$的一个子空间。
+  \label{theorem:2.8}
+\end{ioatheorem}
+
+我们称矢量集合张成一矢量空间$\mathbf{V}$，若$\mathbf{V}$中每个矢量都是该集合中矢量的线性组合，在任何矢量空间或子空间中，都至少存在一个线性独立的矢量的集合$\mathbf{B}$，它张成该空间。这个集合称作矢量空间的基底\footnote{注意：任意两个基底中矢量的数目相同}(或基).矢量空间基底中矢量的数目称作矢量空间的维数。
+
+研究$GF(2)$上所有$n$重构成的矢量空间$\mathbf{V_n}$，我们作下述$n\mbox{个}n$重：
+\begin{eqnarray}
+\left.
+\begin{array}{ll}
+  e_0~&=(1,0,0,0,\cdots 0)\\
+  e_1~&=(0,1,0,0,\cdots 0)\\
+  &\vdots\\
+  e_{n-1}&\:=(0,0,0,0,\cdots 1)\\
+\end{array}
+\right\}\mbox{"1"每次右移一位}
+\end{eqnarray}
+其中$n$重$e_i$仅在第$i$位上有一个非零分量，则$\mathbf{V_n}$中每个$n$重$(a_0,a_1,\cdots
+a_{n-1})$可以表示成$(e_0,e_1,\cdots e_{n-1})$的线性组合：
+\begin{eqnarray}
+(a_0,a_1,a_2,\cdots a_{n-1})=a_0e_0+a_1e_1+a_2e_2+\cdots +a_{n_1}e_{n-1}
+\end{eqnarray}
+所以$e_0,e_1,\cdots
+e_{n-1}$张成$GF(2)$所有$n$重的矢量空间。从上述方程可以看出$e_0,e_1,\cdots
+e_{n-1}$是线性独立的。因此，它们构成$v_n$的基底，且$v_n$的维数是$n$，若$k<n$且$v_1,v_2,\cdots
+v_k$是$v_n$中的$k$个线性独立矢量，则$v_1,v_2,\cdots v_k$的所有型为
+\begin{eqnarray}
+  \mathbf{u}=c_1v_1+c_2v_2+\cdots +c_kv_k
+  \label{}
+\end{eqnarray}
+的线性组合构成$v_n$的一个$k$为子空间$\mathbf{S}$。由于每个$c_i$有两个可能的取值0或1，故有$2^k$个可能不相同的$v_1,v_2,\cdots
+v_k$的线性组合。因此，$\mathbf{S}$由$2^k$个矢量组成且为$v_n$的一个$k$为子空间。
+
+令$\mathbf{u}=(u_0,u_1,\cdots u_{n-1})$和$\mathbf{v}=(v_0,v_1,\cdots
+v_{n-1})$是$v_n$中的两个$n$重。这里定义$\mathbf{u}\mbox{和}\mathbf{v}$的内积(或点积)为
+\begin{eqnarray}
+  \mathbf{u}\cdot\mathbf{v}=u_0\cdot v_0+u_1\cdot v_1+\cdots+u_{n-1}\cdot
+  v_{n-1}
+  \label{}
+\end{eqnarray}
+其中，$u_i\cdot v_i\mbox{和}u_i\cdot v_i+u_{i+1}\cdot
+v_{i+1}$按模2乘法和加法进行。因而内积$\mathbf{u}\cdot\mathbf{v}$是$GF(2)$中的标量。若$\mathbf{u}\cdot\mathbf{v}=0$，就称$\mathbf{u}\mbox{和}\mathbf{v}$彼此正交。
+
+
+\textbf{内积\footnote{内积的概念可以推广到任何伽罗华域}有如下性质：}
+\begin{enumerate}
+  \item $\mathbf{u}\cdot\mathbf{v}=\mathbf{v}\cdot\mathbf{u}$
+  \item
+    $\mathbf{u}\cdot(\mathbf{v}+\mathbf{w})=\mathbf{u}\cdot\mathbf{v}+\mathbf{u}\cdot\mathbf{w}$
+  \item
+    $(\mathbf{au})\cdot\mathbf{v}=\mathbf{a}(\mathbf{u}\cdot\mathbf{v})$
+\end{enumerate}
+令$\mathbf{S}$是$v_n$的$k$维子空间，并令$\mathbf{S_d}$是$v_n$中这样的矢量集合：对$\mathbf{S}$中的任意$\mathbf{u}$和$\mathbf{S_d}$中的任意$\mathbf{v}$有$\mathbf{u}\cdot\mathbf{v}=0$。集合$\mathbf{S_d}$至少包含全零$n$重，$0=(0,0,\cdots
+0)$，因为对$\mathbf{S}$中的任一$\mathbf{u}$有$0\cdot\mathbf{u}=0$。因此$\mathbf{S_d}$是非空的。对$GF(2)$中任一元素$a$和$\mathbf{S_d}$中任一$\mathbf{v}$，
+\begin{eqnarray}
+a\cdot\mathbf{v}=\left\{\begin{array}{r@{~\mbox{若}~}l}
+  0&a=0\\\mathbf{v}&a=1
+ \end{array}
+  \right.
+\end{eqnarray}
+所以$a\cdot\mathbf{v}$也是$\mathbf{S_d}$中。令$\mathbf{v}\mbox{和}\mathbf{w}$是$\mathbf{S_d}$中任意两个矢量。对$\mathbf{S}$中任意$\mathbf{u},\mathbf{u}\cdot(\mathbf{v}+\mathbf{w})=\mathbf{u}\cdot\mathbf{v}+\mathbf{u}\cdot\mathbf{w}=0+0=0$。这就是说，若$\mathbf{v}\mbox{和}\mathbf{w}$正交于$\mathbf{u}$，则矢量$\mathbf{v}+\mathbf{w}$也与$\mathbf{u}$正交。因而，$\mathbf{v}+\mathbf{w}$也是$\mathbf{S_d}$中一个矢量。因此$\mathbf{S_d}$也是$v_n$的一个子空间。这个子空间$\mathbf{S_d}$称作是$\mathbf{S}$的零化(或对偶)空间。反之，$\mathbf{S}$也是$\mathbf{S_d}$的零化空间。$\mathbf{S_d}$的维数由定理\ref{theorem:2.9}给定。
+\begin{ioatheorem}
+  令$\mathbf{S}$是$GF(2)$上所有$n$重的矢量空间中的一个$k$维子空间，则其零化空间$\mathbf{S_d}$的维数为$n-k$。换句话说，$dim(s)+dim(s_d)=n$
+  \label{theorem:2.9}
+\end{ioatheorem}
+
+矢量空间是伽罗华域中矢量表示法的基础，也是后来将介绍的RS译码当中十分重要的概念，在对伽罗华域当中加法的运算起着至关重要的作用。
+%&=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& =
+\section{矩阵\cite{Coding_Fundation}}
+$GF(2)$上(或任意其他域上)$k\times n$阶矩阵是一个有$k$行和$n$列的长方阵：
+\begin{eqnarray}
+  \mathbf{G}=
+  \left[
+  \begin{array}{*{5}{c@{\quad}}}
+    g_{00} & g_{01} & g_{02}& \cdots & g_{0n}\\
+    g_{10} & g_{11} & g_{12}& \cdots & g_{1n}\\
+    \multicolumn{2}{c}{\vdots}&\multicolumn{3}{c}{\vdots}\\
+    g_{(k-1)0} & g_{(k-1)1} & g_{(k-1)2}& \cdots & g_{(k-1)n}
+  \end{array}
+  \right]
+  \label{equ:juzhen1}
+\end{eqnarray}
+其中每个元素$g_{ij},0\le i <k\mbox{和}0\le
+j<n$，都是取自二元域$GF(2)$中的元素。第一个下标$i$表示行，第二个下标$j$表示列。有时以符合$[g_{ij}]$来简化表示矩阵\ref{equ:juzhen1}式。从\ref{equ:juzhen1}式中可看出，$\mathbf{G}$的每一行都是$GF(2)$的一个$n$重，每一列都是$GF(2)$上的一个$k$重。矩阵$\mathbf{G}$也可用它的$k$行$g_0,g_1,\cdots
+g_{k-1}$表示如下：
+\begin{eqnarray}
+  \mathbf{G}=
+  \left[
+  \begin{array}{c}
+    g_0\\
+    g_1\\
+    \vdots\\
+    g_{k-1}
+  \end{array}
+  \right]
+  \label{equ:juzheng2}
+\end{eqnarray}
+若$\mathbf{G}$的$k$行$(k\le
+n)$是线性独立的，则这些行的$2^k$个线性组合形成$GF(2)$上所有$n$重的矢量空间$v_n$的$k$维子空间。这个子空间称为$\mathbf{G}$的行空间，我们可以交换$\mathbf{G}$中任意两行或将一行加到另一行。这些称作是初等行运算。对$\mathbf{G}$进行初等行运算我们得到$GF(2)$上的另一个矩阵$\mathbf{G'}$。但是，$\mathbf{G}\mbox{和}\mathbf{G'}$都给出同一行空间。
+
+令$\mathbf{S}$是$GF(2)$上一个$k\times
+n$阶矩阵$\mathbf{G}$的行空间，其$k$行$g_0,g_1,\cdots
+g_{n-1}$线性独立。令$\mathbf{S_d}$是$\mathbf{S}$的零化空间，则$\mathbf{S_d}$的维数是$n-k$。令$h_0,h_1,\cdots
+h_{n-k-1}$是$S_d$中$n-k$个线性独立矢量。显然，这些矢量张成$\mathbf{S_d}$。我们可以用$h_0,h_1,\cdots
+h_{n-k-1}$作为行构成一个$(n-k)\times n$阶矩阵$\mathbf{H}$，
+\begin{eqnarray}
+  \mathbf{H}=\left[
+  \begin{array}{c}
+    h_0\\
+    h_1\\
+    \vdots \\
+    h_{n-k-1}
+  \end{array}
+    \right]
+    =\left[
+    \begin{array}{*{4}c@{\:}}
+      h_{00}&h_{01}&\cdots &h_{0,n-1}\\
+      h_{10}&h_{11}&\cdots &h_{1,n-1}\\
+      \vdots&\vdots& &\vdots\\
+      h_{n-k-1,0}&h_{n-k-1,1}&\cdots &h_{n-k-1,n-1}
+    \end{array}
+    \right]
+  \label{equ:juzheng3}
+\end{eqnarray}
+$\mathbf{H}$的行空间是$\mathbf{S_d}$。由于$\mathbf{G}$的每一行$g_i$是$\mathbf{S}$中的矢量，且$\mathbf{H}$的每一行$h_i$是$\mathbf{S_d}$中的矢量，则$g_i\mbox{和}h_i$的内积必是零$(\mbox{即}g_i\cdot
+h_i
+=0)$。由于$\mathbf{G}$的行空间$\mathbf{S}$是$\mathbf{H}$的行空间$S_d$的零化空间，故我们称$\mathbf{S}$是$\mathbf{H}$的零化空间。综上结果可得到：
+\begin{ioatheorem}
+  对$GF(2)$上有$k$个线性独立的任意$k\times
+  n$阶矩阵，都存在一个有$(n-k)$个线性独立行的$(n-k)\times
+  n$阶矩阵，使得对$\mathbf{G}$中任一行$g_i$和$H$中任意行$h_j$有$g_i\cdot
+  h_j=0$。$\mathbf{G}$的行空间是$\mathbf{H}$的零化空间，反之亦然。
+  \label{theorem:2.10}
+\end{ioatheorem}
+若两个矩阵有相同的行数和相同的列数，它们就可以相加。两个$k\times
+n$阶矩阵$\mathbf{A}=[a_{ij}]$和$\mathbf{B}=[b_{ij}]$相加，我们简单地将它们的相应元素$a_{ij}\mbox{和}b_{ij}$相加如下：
+\begin{eqnarray}
+  [a_{ij}]+[b_{ij}]=[a_{ij}+b_{ij}]
+  \label{equ:juzheng4}
+\end{eqnarray}
+因此，得到的矩阵也是$k\times
+n$阶矩阵。两个矩阵只要第一个矩阵的列数等于第二个矩阵的行数就可以相乘。$k\times
+n$阶矩阵$\mathbf{A}=[a_{ij}]$乘以$n\times l$阶矩阵$\mathbf{B}=[b_{ij}]$的积
+\begin{eqnarray}
+  \mathbf{C}=\mathbf{A}\times\mathbf{B}=[c_{ij}]
+  \label{equ:juzheng5}
+\end{eqnarray}
+是$k\times
+l$阶矩阵，其元素$c_{ij}$等于$\mathbf{A}$中第$i$行$a_i$和$\mathbf{B}$中第$j$列$b_i$的内积，即
+\begin{eqnarray}
+  c_{ij}=a_i\cdot b_j =\sum_{i=0}^{n-1}{a_{ij}\cdot b_{ij}}
+  \label{equ:juzheng6}
+\end{eqnarray}
+令$\mathbf{G}$是$GF(2)$上一个$k\times
+n$阶矩阵，用$\mathbf{G^T}$表示$\mathbf{G}$的转置，它是一个$n\times
+k$阶矩阵。它的各行是$\mathbf{G}$的各列，而它的各列是$\mathbf{G}$的各行。一个$k\times
+k$阶矩阵，若在主对角线都为1而其它处为0。就称作是恒等矩阵。这一矩阵通常用$1k$表示。矩阵$\mathbf{G}$的子阵是由除去$\mathbf{G}$的给定行或列所得到的矩阵。
+
+矩阵的介绍是为了分析RS译码的理论知识的基础，它可以直观，深入的解释BM算法以及RS译码的全过程，是我们作理论分析的必备知识。
+%&=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& &=& 
+
+\section{本章小节}
+本章从近世代数的角度，介绍了信道编码的基本知识，其中包括群、域、矢量空间、矩阵，着重介绍了伽罗华域及其上的运算准则，为下面RS码的编译码提供理论依据。
+%%========================================================================
+% empty page for two-page print
+\ifthenelse{\equal{\ioaside}{T}}{%
+  \newpage\mbox{}%
+  \thispagestyle{empty}}{}
+%%========================================================================
+%\end{document}

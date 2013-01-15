@@ -1,0 +1,15 @@
+*.aux
+*.swp
+*.log
+*.sh
+*.cfg
+*.cls
+*.bbl
+*.blg
+*.lof
+*.lot
+*.nlo
+*.out
+*.bak
+*.toc
+*.txt

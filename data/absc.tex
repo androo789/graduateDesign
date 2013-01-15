@@ -1,0 +1,30 @@
+
+%% 中文摘要
+\chapter*{\centerline{摘\quad 要}}
+\chaptermark{摘\quad 要}
+\addcontentsline{toc}{chapter}{\xiaosi\heiti 摘\quad 要} 
+\pagenumbering{Roman}
+%\pagestyle{plain}
+\thispagestyle{plainabstractc}
+\vspace{1em}
+在低信噪比的水声通信系统中，采取卷积码和RS码来提高信息传送的可靠性。对于卷积码，采用序贯译码方式，来简化译码算法，提高译码效率。而费诺算法是序贯译码方式中空间开支小，运算量小，实现比较简单，现实应用比较广泛的一种算法。而对于RS码，采用BM算法进行译码。
+
+
+通过matlab仿真，确定译码参数，并在PC/104上运行，测试效率。
+
+通过测试得到的数据，可以得到几个结论。卷积码序贯译码在约束长度为24的情况下，误码率可以很好的满足要求，与书上的理论相一致，而运行时间有一定的延迟，因此系统需要缓冲器来存储译码数据；而$RS(15,9,7)$采用BM译码算法，误码率有很大的改善，而且运行时间很短，因此系统不需要缓冲器来存储译码数据。
+
+\vspace{1em}
+
+\noindent\textbf{关键词}
+
+低信噪比\quad 水声通信\quad
+卷积码\quad RS码
+%%============================================================O
+% empty page for two-page print
+\ifthenelse{\equal{\ioaside}{T}}{%
+  \newpage\mbox{}%
+  \thispagestyle{empty}}{}
+
+%%============================================================
+

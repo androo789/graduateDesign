@@ -1,0 +1,105 @@
+\documentclass[twoside,numberorder]{ioathesis}
+%==============================================================
+%==============================================================
+\usepackage[colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black,bookmarksopen=true]{hyperref}
+%自己需要增加什么 package 或修改什么设置的话，都放在这里吧。
+
+%一些全局工具的定义
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+%==============================================================
+%==============================================================
+\begin{document}
+%==============================================================
+%==============================================================
+%这部分是论文封面、题名页需要的信息，请根据《研究生学位论文编写规则》自行修改
+
+  %论文题目：{中文}{英文}
+  \ioatitlec{水声通信中Turbo均衡技术的研究}
+  \ioatitlee{Research of Turbo Equalization for Underwater\\ Acoustic
+  Communication System}      
+  %作者：{中文姓名}{英文}{学号}
+  \ioaauthornamec{唐怀东}
+  \ioaauthornamee{Tang Huaidong}
+  %学院信息：{学院中文}{学院英文}{subject}
+  \ioadepartmentc{中国科学院声学研究所}
+  \ioadepartmente{Institute of Acoustics, Chinese Academy of Sciences}
+  \ioamajorc{信号与信息处理}
+  \ioamajore{Signal and Information Processing}
+  \ioadegreec{工学硕士}
+  \ioadegreee{Master}
+  %指导教师：{导师中文名}{导师英文名}
+  \ioamentorf{朱敏\qquad 研究员\qquad 中国科学院声学研究所} 
+  \ioamentors{武岩波\quad 副研究员\quad 中国科学院声学研究所}
+  \ioadatec{2013年5月}
+  \ioadatee{May,~2013}
+ 
+
+
+
+%==============================================================
+% 这部分除了“取舍”外，不需要自己修改，必要信息都已在上面设置。
+
+  %封面
+  \input{data/coverc}
+  \input{data/covere}
+  %诚信承诺书
+  \include{data/announce} 
+  %中文摘要
+  \include{data/absc}
+  %英文摘要
+  \include{data/abse}
+ 
+%==============================================================
+%这部分不需要自己修改。
+  \frontmatter
+  %目录页
+  \pagenumbering{roman}
+  \pagestyle{plaincontent}
+  \markboth{目录}{目录}
+  \chaptermark{目录}
+  \addcontentsline{toc}{chapter}{\xiaosi\heiti 目录} 
+  \tableofcontents
+%%============================================================O
+% empty page for two-page print
+\ifthenelse{\equal{\ioaside}{T}}{%
+  \newpage\mbox{}%
+  \thispagestyle{empty}}{}
+
+%%============================================================
+  \mainmatter
+
+  \thispagestyle{empty}
+%==============================================================
+\pagestyle{mainfancy}
+  \include{data/chap1}
+  \include{data/chap2}
+  \include{data/chap3}
+  \include{data/chap4}
+  \include{data/chap5}
+  \include{data/chap6}
+%==============================================================
+%这也是个不需要自己修改的部分。
+
+  \backmatter %结束章节自动编号
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
+  \pagestyle{plain}
+  %参考文献
+  \include{data/ref}
+  %\pagestyle{plainref}
+  %\addcontentsline{toc}{chapter}{\xiaosi\heiti 参考文献} % 解决目录中没有相应的参考文献的条目问题
+  %\chaptermark{参考文献}
+%==============================================================
+
+ % \bibliography{data/ioabib}
+  %致谢
+  \include{data/resume}
+  \include{data/thanks}
+  %附录
+  \include{data/appe}
+
+%==============================================================
+%==============================================================
+\end{document}
