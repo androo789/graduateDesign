@@ -1,0 +1,453 @@
+%-12345X@PJL JOB
+@PJL SET RESOLUTION = 600
+@PJL SET ECONOMODE = OFF
+@PJL ENTER LANGUAGE = POSTSCRIPT 
+%!PS-Adobe-3.0
+%%Title: MATLAB
+%%Creator: PScript5.dll Version 5.2.2
+%%CreationDate: 3/26/2013 19:27:9
+%%For: Administrator
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%Orientation: Portrait
+%%PageOrder: Special
+%%DocumentNeededResources: (atend)
+%%DocumentSuppliedResources: (atend)
+%%DocumentData: Clean7Bit
+%%TargetDevice: (HP LaserJet 5000 Series) (2014.108) 1
+%%LanguageLevel: 2
+%%EndComments
+
+%%BeginDefaults
+%%PageBoundingBox: 14 13 581 828
+%%ViewingOrientation: 1 0 0 1
+%%EndDefaults
+
+
+%%BeginProlog
+%%BeginResource: file Pscript_WinNT_ErrorHandler 5.0 0
+/currentpacking where{pop/oldpack currentpacking def/setpacking where{pop false
+setpacking}if}if/$brkpage 64 dict def $brkpage begin/prnt{dup type/stringtype
+ne{=string cvs}if dup length 6 mul/tx exch def/ty 10 def currentpoint/toy exch
+def/tox exch def 1 setgray newpath tox toy 2 sub moveto 0 ty rlineto tx 0
+rlineto 0 ty neg rlineto closepath fill tox toy moveto 0 setgray show}bind def
+/nl{currentpoint exch pop lmargin exch moveto 0 -10 rmoveto}def/=={/cp 0 def
+typeprint nl}def/typeprint{dup type exec}readonly def/lmargin 72 def/rmargin 72
+def/tprint{dup length cp add rmargin gt{nl/cp 0 def}if dup length cp add/cp
+exch def prnt}readonly def/cvsprint{=string cvs tprint( )tprint}readonly def
+/integertype{cvsprint}readonly def/realtype{cvsprint}readonly def/booleantype
+{cvsprint}readonly def/operatortype{(--)tprint =string cvs tprint(-- )tprint}
+readonly def/marktype{pop(-mark- )tprint}readonly def/dicttype{pop
+(-dictionary- )tprint}readonly def/nulltype{pop(-null- )tprint}readonly def
+/filetype{pop(-filestream- )tprint}readonly def/savetype{pop(-savelevel- )
+tprint}readonly def/fonttype{pop(-fontid- )tprint}readonly def/nametype{dup
+xcheck not{(/)tprint}if cvsprint}readonly def/stringtype{dup rcheck{(\()tprint
+tprint(\))tprint}{pop(-string- )tprint}ifelse}readonly def/arraytype{dup rcheck
+{dup xcheck{({)tprint{typeprint}forall(})tprint}{([)tprint{typeprint}forall(])
+tprint}ifelse}{pop(-array- )tprint}ifelse}readonly def/packedarraytype{dup
+rcheck{dup xcheck{({)tprint{typeprint}forall(})tprint}{([)tprint{typeprint}
+forall(])tprint}ifelse}{pop(-packedarray- )tprint}ifelse}readonly def/courier
+/Courier findfont 10 scalefont def end errordict/handleerror{systemdict begin
+$error begin $brkpage begin newerror{/newerror false store vmstatus pop pop 0
+ne{grestoreall}if errorname(VMerror)ne{showpage}if initgraphics courier setfont
+lmargin 720 moveto errorname(VMerror)eq{userdict/ehsave known{clear userdict
+/ehsave get restore 2 vmreclaim}if vmstatus exch pop exch pop PrtVMMsg}{
+(ERROR: )prnt errorname prnt nl(OFFENDING COMMAND: )prnt/command load prnt
+$error/ostack known{nl nl(STACK:)prnt nl nl $error/ostack get aload length{==}
+repeat}if}ifelse systemdict/showpage get exec(%%[ Error: )print errorname
+=print(; OffendingCommand: )print/command load =print( ]%%)= flush}if end end
+end}dup 0 systemdict put dup 4 $brkpage put bind readonly put/currentpacking
+where{pop/setpacking where{pop oldpack setpacking}if}if
+%%EndResource
+userdict /Pscript_WinNT_Incr 230 dict dup begin put
+%%BeginResource: file Pscript_FatalError 5.0 0
+userdict begin/FatalErrorIf{{initgraphics findfont 1 index 0 eq{exch pop}{dup
+length dict begin{1 index/FID ne{def}{pop pop}ifelse}forall/Encoding
+{ISOLatin1Encoding}stopped{StandardEncoding}if def currentdict end
+/ErrFont-Latin1 exch definefont}ifelse exch scalefont setfont counttomark 3 div
+cvi{moveto show}repeat showpage quit}{cleartomark}ifelse}bind def end
+%%EndResource
+userdict begin/PrtVMMsg{vmstatus exch sub exch pop gt{[
+(This job requires more memory than is available in this printer.)100 500
+(Try one or more of the following, and then print again:)100 485
+(For the output format, choose Optimize For Portability.)115 470
+(In the Device Settings page, make sure the Available PostScript Memory is accurate.)
+115 455(Reduce the number of fonts in the document.)115 440
+(Print the document in parts.)115 425 12/Times-Roman[/STSong-Light--GBK-EUC-H
+dup{findfont}stopped{cleartomark}{/FontName get eq{pop cleartomark[
+<b8c3cec4bcfed0e8d2aad3c3b5c4c4dab4e6ccabb6e0a1a3c4fabfc9d2d4cad4d3c3c8e7cfc2b5
+c4b7bdb7a8d4d9b4f2d3a1a3ba>100 500<d4daa1b0506f7374536372697074a1b1b6d4bbb0bf
+f2a3acd1a1d4f1a1b0506f7374536372697074a3a8b6d4b1e3d0afcabd41445343b5c4d3c5bbafa
+3a9a1b1a1a3>115 485<d4daa1b0c9e8b1b8d1a1cfeea1b1b6d4bbb0bff2a3aca1b0bfc9d3c3b
+4f2d3a1bbfac4dab4e6a1b1b5c4d6b5cac7beabc8b7b5c4a1a3>115 470<d4dacec4bcfed6d0c
+9d9d3c3bcb8d6d6d7d6cce5a1a3>115 455<b5a5b6c0b4f2d3a1b8c3cec4bcfeb5c4b2bbcdacb
+2bfb7d6bbf2d2b3a1a3>115 440 10 0/STSong-Light--GBK-EUC-H}{cleartomark}ifelse}
+ifelse showpage(%%[ PrinterError: Low Printer VM ]%%)= true FatalErrorIf}if}
+bind def end version cvi 2016 ge{/VM?{pop}bind def}{/VM? userdict/PrtVMMsg get
+def}ifelse
+105000 VM?
+%%BeginResource: file Pscript_Win_Basic 5.0 0
+/d/def load def/,/load load d/~/exch , d/?/ifelse , d/!/pop , d/`/begin , d/^
+/index , d/@/dup , d/+/translate , d/$/roll , d/U/userdict , d/M/moveto , d/-
+/rlineto , d/&/currentdict , d/:/gsave , d/;/grestore , d/F/false , d/T/true ,
+d/N/newpath , d/E/end , d/Ac/arc , d/An/arcn , d/A/ashow , d/D/awidthshow , d/C
+/closepath , d/V/div , d/O/eofill , d/L/fill , d/I/lineto , d/-c/curveto , d/-M
+/rmoveto , d/+S/scale , d/Ji/setfont , d/Lc/setlinecap , d/Lj/setlinejoin , d
+/Lw/setlinewidth , d/Lm/setmiterlimit , d/sd/setdash , d/S/show , d/LH/showpage
+, d/K/stroke , d/W/widthshow , d/R/rotate , d/L2? false/languagelevel where{pop
+languagelevel 2 ge{pop true}if}if d L2?{/xS/xshow , d/yS/yshow , d/zS/xyshow ,
+d}if/b{bind d}bind d/bd{bind d}bind d/xd{~ d}bd/ld{, d}bd/bn/bind ld/lw/Lw ld
+/lc/Lc ld/lj/Lj ld/sg/setgray ld/ADO_mxRot null d/self & d/OrgMx matrix
+currentmatrix d/reinitialize{: OrgMx setmatrix[/TextInit/GraphInit/UtilsInit
+counttomark{@ where{self eq}{F}?{cvx exec}{!}?}repeat cleartomark ;}b
+/initialize{`{/Pscript_Win_Data where{!}{U/Pscript_Win_Data & put}?/ADO_mxRot ~
+d/TextInitialised? F d reinitialize E}{U/Pscript_Win_Data 230 dict @ ` put
+/ADO_mxRot ~ d/TextInitialised? F d reinitialize}?}b/terminate{!{& self eq
+{exit}{E}?}loop E}b/suspend/terminate , d/resume{` Pscript_Win_Data `}b U `
+/lucas 21690 d/featurebegin{countdictstack lucas[}b/featurecleanup{stopped
+{cleartomark @ lucas eq{! exit}if}loop countdictstack ~ sub @ 0 gt{{E}repeat}
+{!}?}b E/snap{transform 0.25 sub round 0.25 add ~ 0.25 sub round 0.25 add ~
+itransform}b/dsnap{dtransform round ~ round ~ idtransform}b/nonzero_round{@ 0.5
+ge{round}{@ -0.5 lt{round}{0 ge{1}{-1}?}?}?}b/nonzero_dsnap{dtransform
+nonzero_round ~ nonzero_round ~ idtransform}b U<04>cvn{}put/rr{1 ^ 0 - 0 ~ -
+neg 0 - C}b/irp{4 -2 $ + +S fx 4 2 $ M 1 ^ 0 - 0 ~ - neg 0 -}b/rp{4 2 $ M 1 ^ 0
+- 0 ~ - neg 0 -}b/solid{[]0 sd}b/g{@ not{U/DefIf_save save put}if U/DefIf_bool
+2 ^ put}b/DefIf_El{if U/DefIf_bool get not @{U/DefIf_save get restore}if}b/e
+{DefIf_El !}b/UDF{L2?{undefinefont}{!}?}b/UDR{L2?{undefineresource}{! !}?}b
+/freeVM{/Courier findfont[40 0 0 -40 0 0]makefont Ji 2 vmreclaim}b/hfRedefFont
+{findfont @ length dict `{1 ^/FID ne{d}{! !}?}forall & E @ ` ~{/CharStrings 1
+dict `/.notdef 0 d & E d}if/Encoding 256 array 0 1 255{1 ^ ~/.notdef put}for d
+E definefont !}bind d/hfMkCIDFont{/CIDFont findresource @ length 2 add dict `{1
+^ @/FID eq ~ @/XUID eq ~/UIDBase eq or or{! !}{d}?}forall/CDevProc ~ d/Metrics2
+16 dict d/CIDFontName 1 ^ d & E 1 ^ ~/CIDFont defineresource ![~]composefont !}
+bind d
+%%EndResource
+%%BeginResource: file Pscript_Win_Utils_L2 5.0 0
+/rf/rectfill , d/fx{1 1 dtransform @ 0 ge{1 sub 0.5}{1 add -0.5}? 3 -1 $ @ 0 ge
+{1 sub 0.5}{1 add -0.5}? 3 1 $ 4 1 $ idtransform 4 -2 $ idtransform}b/BZ{4 -2 $
+snap + +S fx rf}b/rs/rectstroke , d/rc/rectclip , d/UtilsInit{currentglobal{F
+setglobal}if}b/scol{! setcolor}b/colspA/DeviceGray d/colspABC/DeviceRGB d
+/colspRefresh{colspABC setcolorspace}b/SetColSpace{colspABC setcolorspace}b
+/resourcestatus where{!/ColorRendering/ProcSet resourcestatus{! ! T}{F}?}{F}?
+not{/ColorRendering<</GetHalftoneName{currenthalftone @/HalftoneName known{
+/HalftoneName get}{!/none}?}bn/GetPageDeviceName{currentpagedevice @
+/PageDeviceName known{/PageDeviceName get @ null eq{!/none}if}{!/none}?}bn
+/GetSubstituteCRD{!/DefaultColorRendering/ColorRendering resourcestatus{! !
+/DefaultColorRendering}{(DefaultColorRendering*){cvn exit}127 string
+/ColorRendering resourceforall}?}bn>>/defineresource where{!/ProcSet
+defineresource !}{! !}?}if/buildcrdname{/ColorRendering/ProcSet findresource `
+mark GetHalftoneName @ type @/nametype ne ~/stringtype ne and{!/none}if(.)
+GetPageDeviceName @ type @/nametype ne ~/stringtype ne and{!/none}if(.)5 ^ 0 5
+-1 1{^ length add}for string 6 1 $ 5 ^ 5{~ 1 ^ cvs length 1 ^ length 1 ^ sub
+getinterval}repeat ! cvn 3 1 $ ! ! E}b/definecolorrendering{~ buildcrdname ~
+/ColorRendering defineresource !}b/findcolorrendering where{!}{
+/findcolorrendering{buildcrdname @/ColorRendering resourcestatus{! ! T}{
+/ColorRendering/ProcSet findresource ` GetSubstituteCRD E F}?}b}?
+/selectcolorrendering{findcolorrendering !/ColorRendering findresource
+setcolorrendering}b/G2UBegin{findresource/FontInfo get/GlyphNames2Unicode get
+`}bind d/G2CCBegin{findresource/FontInfo get/GlyphNames2HostCode get `}bind d
+/G2UEnd{E}bind d/AddFontInfoBegin{/FontInfo 8 dict @ `}bind d/AddFontInfo{
+/GlyphNames2Unicode 16 dict d/GlyphNames2HostCode 16 dict d}bind d
+/AddFontInfoEnd{E d}bind d/T0AddCFFMtx2{/CIDFont findresource/Metrics2 get ` d
+E}bind d
+%%EndResource
+end
+%%EndProlog
+
+%%BeginSetup
+statusdict begin (%%[ ProductName: ) print product print ( ]%%)= flush end
+[ 1 0 0 1 0 0 ] false Pscript_WinNT_Incr dup /initialize get exec
+featurebegin{
+%%BeginNonPPDFeature: JobTimeout 0
+0 /languagelevel where{pop languagelevel}{1}ifelse 2 ge{1 dict dup/JobTimeout  4 -1 roll put setuserparams}{statusdict/setjobtimeout get exec}ifelse
+%%EndNonPPDFeature
+}featurecleanup
+
+featurebegin{
+%%BeginNonPPDFeature: WaitTimeout 120
+120 /languagelevel where{pop languagelevel}{1}ifelse 2 ge{1 dict dup/WaitTimeout 4 -1 roll put setuserparams}{statusdict/waittimeout 3 -1 roll put}ifelse
+%%EndNonPPDFeature
+}featurecleanup
+
+featurebegin{
+%%BeginFeature: *HPPaperPolicy PromptUser
+
+   <</DeferredMediaSelection true>> setpagedevice
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *HPHalftone PrinterDefault
+
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *Smoothing True
+
+  << /PostRenderingEnhance true /PostRenderingEnhanceDetails << /REValue 2 /Type 8 >>
+  >> setpagedevice
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *PageSize A4
+
+  <</PageSize [595 842] /ImagingBBox null>> setpagedevice
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *Option4 False
+<</Collate false>> setpagedevice
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *Duplex None
+
+  <</Duplex false>> setpagedevice
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *MediaType None
+
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *Option1 False
+
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *Option2 False
+
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *Option3 True
+
+%%EndFeature
+}featurecleanup
+featurebegin{
+%%BeginFeature: *InstalledMemory 4MB
+
+%%EndFeature
+}featurecleanup
+1 setlinecap 1 setlinejoin
+/mysetup [ 72 600 V 0 0 -72 600 V 14.00031 828 ] def 
+%%EndSetup
+
+userdict begin /ehsave save def end
+%%Page: 1 1
+%%PageBoundingBox: 14 13 581 828
+%%EndPageComments
+%%BeginPageSetup
+/DeviceRGB dup setcolorspace /colspABC exch def
+mysetup concat colspRefresh
+%%EndPageSetup
+
+Pscript_WinNT_Incr begin
+%%BeginResource: file Pscript_Win_Dib_L2 5.0 0
+/iw 0 d/ih 0 d/im_save 0 d/s 0 d/polarity 0 d/smoothflag 0 d/mystring 0 d/bpc 0
+d/maskcolor 0 d/mask? F d/setup1asciiproc{[currentfile mystring/readhexstring
+cvx/! cvx]cvx bind}b/setup1binaryproc{[currentfile mystring/readstring cvx/!
+cvx]cvx bind}b/setup2asciiproc{currentfile/ASCII85Decode filter/RunLengthDecode
+filter}b/setup2binaryproc{currentfile/RunLengthDecode filter}b/jpegasciiproc
+{currentfile/ASCII85Decode filter<</Relax 1>>/DCTDecode filter}b/jpegbinaryproc
+{currentfile<</Relax 1>>/DCTDecode filter}b/mycolorspace{colspABC}d/myimagedict
+{/myimagedict 10 dict d myimagedict @ `/ImageType 1 d/MultipleDataSource F d E}
+b/imageprocarray[/setup1binaryproc/setup1asciiproc/setup2binaryproc
+/setup2asciiproc/setup1binarydecodeproc/setup1asciidecodeproc]d/jpegprocarray[
+/jpegasciiproc/jpegbinaryproc]d/Q{/im_save save d scol imageprocarray ~ get/s ~
+, d/polarity ~ d/smoothflag ~ d +/dx 2 ^ d/dy 1 ^ d +S/mystring ~ string d/bpc
+~ d/ih ~ d/iw ~ d fx rf}b/X{/im_save save d/mask? ~ d/maskcolor ~ d
+imageprocarray ~ get/s ~ , d/polarity ~ d/smoothflag ~ d +/dx 2 ^ d/dy 1 ^ d +S
+/mystring ~ string d/bpc ~ d/ih ~ d/iw ~ d}b/Z{im_save restore}b/beginjpeg{
+/jpeg_save save d jpegprocarray ~ get/jpegimageproc ~ , d + +S/bpc ~ d/ih ~ d
+/iw ~ d bpc 24 eq{/DeviceRGB}{/DeviceGray}? setcolorspace myimagedict @ `
+/ImageType 1 d/Width iw d/Height ih d/Decode bpc 24 eq{[0 1 0 1 0 1]}{[0 1]}? d
+/ImageMatrix[iw 0 0 ih 0 0]d/BitsPerComponent 8 d/DataSource jpegimageproc d E
+image}b/endjpeg{jpeg_save restore}b/Y{scol myimagedict @ ` mask?{/polarity
+maskcolor 0 get 0 eq{T}{F}? d}if/Width iw d/Height ih d/Decode polarity{[1 0]}{
+[0 1]}? d/ImageMatrix[iw 0 0 ih 0 0]d/DataSource s d/BitsPerComponent 1 d
+/Interpolate smoothflag d E imagemask}bd/doclutimage{/rgbclut ~ d bpc @ 8 eq{!
+255}{@ 4 eq{! 15}{2 eq{3}{1}?}?}?/hival ~ d[/Indexed currentcolorspace hival
+rgbclut]setcolorspace myimagedict @ ` mask?{/ImageType 4 d/MaskColor maskcolor
+d}if/Width iw d/Height ih d/Decode[0 hival]d/ImageMatrix[iw 0 0 ih 0 0]d
+/DataSource s d/BitsPerComponent bpc d/Interpolate smoothflag d E image}b
+/doCMYKclutimage{/CMYKclut ~ d bpc @ 8 eq{! 255}{4 eq{15}{3}?}?/hival ~ d[
+/Indexed/DeviceCMYK hival CMYKclut]setcolorspace myimagedict @ ` mask?{
+/ImageType 4 d/MaskColor maskcolor d}if/Width iw d/Height ih d/Decode[0 hival]d
+/ImageMatrix[iw 0 0 ih 0 0]d/DataSource s d/BitsPerComponent bpc d/Interpolate
+smoothflag d E image}b/doNimage{bpc 24 eq{currentcolorspace}{colspA}?
+setcolorspace myimagedict @ ` mask?{/ImageType 4 d/MaskColor maskcolor d}if
+/Width iw d/Height ih d/Decode bpc 24 eq{[0 1 0 1 0 1]}{[0 1]}? d/ImageMatrix
+[iw 0 0 ih 0 0]d/DataSource s d/BitsPerComponent bpc 24 eq{8}{bpc}? d
+/Interpolate smoothflag d E image}b/doCMYKimage{/DeviceCMYK setcolorspace
+myimagedict @ ` mask?{/ImageType 4 d/MaskColor maskcolor d}if/Width iw d/Height
+ih d/Decode[0 1 0 1 0 1 0 1]d/ImageMatrix[iw 0 0 ih 0 0]d/DataSource s d
+/BitsPerComponent 8 d/Interpolate smoothflag d E image}b
+%%EndResource
+end reinitialize
+/DeviceGray dup setcolorspace /colspABC exch def
+: 532 325 8 0 2128 1300 1412 2859 F F 3 [ 0 ] F 
+X
+doNimage
+JcC<$JcC<$mJhb;JcC<$JcG-;JcC<$JcC<$mJhb;JcC<$JcG-;JcC<$JcC<$mJhb;JcC<$JcG-;
+JcC<$JcC<$mJhb;JcC<$JcG-;JcC<$JcC<$mJhb;JcC<$JcG-;JcC<$JcC<$mJhb;JcC<$JcG-;
+JcC<$JcC<$mJhb;JcC<$JcG-;JcC<$JcC<$mJhb;JcC<$JcG-;JcGBBqZ)3IJcC<$!<7WMp&Fgf
+JcC<$JcC<$pAb*lrVuisJcC<$K)^E%p](3mqZ$QqJcC<$KE$N&p](6nq>^HpJcC<$KE$N&p](6n
+q>^HpJcC<$KE$N&mJm1dJcC<$KE$N&mf3:eq>Z!GPlQC8pA]^DnGiFeqYu*HPQ6:7pA]^Dnc/Rg
+q#C?oNW9"YNrT+ZJcGHDJcG?Ar;cTlrrA&YrrA)Zrr@WMpA]^Dp&Fsjp&G$lJcD,;rr@WMpA]^D
+pAb*loDegjJcD,;rr@WMpA]^DpAb-mo)J^iJcD,;rr@WMpA]^Dp](6nnc/UhJcD,;rr@WMpA]^D
+p]'mdqu?ZrJcD,;rr@WMpA]^Dp]'mdqu?ZrJcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\
+JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^D
+jo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WM
+pA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;
+rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\
+JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^D
+jo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WM
+pA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;
+rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\
+JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^D
+jo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WM
+pA]^Djo>>\JcD,;rr@WMpA]^Djo>>\JcD,;rr@WMpA]^Dnc/Uhp](6nJcD,;rr@WMpA]^Dnc/Uh
+p](6n`W#o<JcF:#rr@WMpA]^DoDeahp](6n`rH#<[/U++V#UGpJcGHDJcGECqZ-BjrrC+>quF2*
+rW&eprr@WMpA]^Dp&Fmhp](6n`rH#<[f?7*VZ6YrJcGHDJcG9?rrDfnrrC%<!!)Wj!!'q:rW)co
+!!'2%rr@WMpA]^Dnc/Uhp](6n\,ZC,`;]f;q>^Eor;Q`s[K$7,JcGHDJcG9?rrDfnr;aG/qZ-Zr
+!!'h7quH`rrW'G-rW%NLpA]^Dnc/Uhp](0l\c;F)p\t3ns8N-#rrCIHr;cisquHWo!!'e6rW%NL
+pA]^Dnc/Uhp](6n])Vd1s8Vioq>^6jf)GaNs8)fps8E!!rrE#trW'_5rr@WMpA]^Dnc/Uhp](6n
+^&J*5s8;rts7cTorr<&us7ZNHs7H?ls8Duus8E#us82lprr<&=s8N(Ms7ZJDs7--h!;HNn!5AKk
+!87D<!<<)t!<)rs!<2uu!6bEB!.k1Ds+14?s8N)ns8N)9s8N'!s5a4\s8;rPrrE-"l2^kaquHcs
+qu?`srW(1Brr@WMpA]^Dnc/Uhp](6n_uKZ8!<<#u!<;?b!<;rshu<ZVs8Vlp!<<'!!<;or!<;ip
+s8W&us8Vus!<;rsc2[eDJcGHDJcG9?rrDfnrrC";qZ$Wrk5YM^rW(jUp&G*mm/R.drrE*!quH`r
+rW(1Brr@WMpA]^Dnc/Uhp](6n_uJWp!WN/Ws4mYTs82lprr<&Bs8N(Ms7ZJDs7--h!;HNn!5ecl
+!<<'!!;uis!:'U^!!*&T!6,!<!.k1Ds+143s8N)<rr<'!s7lWps5F%Xs8E#`s8E#us4dVOrr<&D
+s8N(Ms7ZJDs5j:\!65'<!!*&s!!*&U!!*&s!:'Ra!<<)Q!<)rs!<)ot!7UuJ!.k1Ds+143s8N)>
+s82iss8Duus4dSSs8E#_rrE-"j8]2[qu?`srW)osquHcsrW(IJrr@WMpA]^Djo>>\a8br8!<:UM
+li5lC!<;rs!WN/ss8E#us82lIs8N(Ms7ZJDs5j:\!6G2b!:0[=!;uis!<<'#!<3&ts8E#Js8N(M
+s7ZJDs5j:\!7q/M!;$69!!3*"mJki>!ri9#qZ-Nn!!(LJrr@WMpA]^Djo>>\fDkgMoD\djs8N*"
+s4%)Ls8E#es3:Vhs8N(Ms7ZJDs5j:\!8.>L!:p0h!!*&H!:Ts7!6kKC!.k1Ds+143s8N)Ns8E#h
+s3UfHs8E#fs3^oIrr<&Bs8N(Ms7ZJDs5j:\!7q/M!:^$>!<<'%!<3'!!:g*:!6>->!.k1Ds+143
+s8N)<s4RGQs82lss8E#gs3C\ds8N(Ms7ZJDs5j:\!6>,`!;$68!6P9@!.k1Ds+143s8N)?s3(K5
+s3C\ds8N(Ms7ZJDs5j:\!6P8b!:Tpf!<<)K!!3*"aoDA@JcGHDJcFj3rrC.?cN*81d/_>hrr@WM
+pA]^Djo>>\a8aWh!<<'!lMo01bQ%SBJcGHDJcFj3rrC+>d/`M4cN),frr@WMpA]^Djo>>\df0:I
+q#AY?li5N9!<;utaoDA@JcGHDJcFj3rrCOJrW)`nrVurueGoXM!:0[:!<<*!!6G3?!.k1Ds+143
+s8N)Ks82llrrE-"eGoULrW)?cf)W_grr@WMpA]^Djo>>\e,TCIq#AhDs8VusmJki>pAY*mcN!nE
+JcGHDJcFj3rrCLI!!)foe,]IIrW)?cf)YUGrW(:Err@WMpA]^Djo>>\aT'fks8N-#rrE*!!!)?b
+r;clth#RKT!!)utquG+Drr@WMpA]^Djo>>\aoD/:!<:mU!<;rsli-qbs8W*!!<:gSs8W&urVuis
+ci="FJcGHDJcFj3rrC4Aq#CEpec>+;rW)rteH#RJ!!(=Err@WMpA]^Djo>>\aoD>?s8W*!s8W&u
+!<;$Y!<;ormf31b!<:aQs8W&uaT)8?JcGHDJcFj3rrC.?!!*#urW)uu!!*'!i;`lXr;c3arW)rt
+hZ3]V!!)ut!!((>rr@WMpA]^Djo>>\`W,i9!<<'!s8V$Xs8N'!lMph`s8UsV^]4<6JcGHDU&Y,m
+q#C6lec5XL`;ff:!<;lq!<;?b!<;lql2TE:^]4<6JcGHDU&Y&kqu?Zrs8W&uf)PaM_uB`;s7cQo
+s6fphrrE)q!9aC]!<<)U!5SX7!.k1Ds.TGm!<3#u!<2uu!;uls!7q2M!5SX2!<<)e!!*&s!!3*"
+jo5;\rVtaT_#OE7JcGHDU&P)mr;Z`rqu6Wrec5XL^]3Bq!<<#uh>cU;!<;lq_>jN8JcGHDU&P)m
+oD\djec5XL^Am9p!WN/Us8)crs6Tdds7cT2s8N(Ms7ZJdrr<&krr<&Ks8N)4rrE-"o)Jdjp]0"I
+r;ciso`,!lquH`rq>eA3rr@WMpA^idm/Yi>rrBY1r;Zitp](<oq>f.IrrE&uqZ$WroDf!n!<3'!
+s8N)7s8N(Ms7ZJ\rr<&Es8N)/rr<&us7$*:s8;rsrrE-"o)QH'rr@WMpA^T]rrC@ErrC1@!!)Bc
+rrE*!o`3D>rrE#t!!*'!qu?`sq#J,.rr@WMpA^fc!!)rsrrC@ErrC4ArW)?c!!)utpAiD:rW)uu
+rW)rt!<E/s!5AL5!.k1Ds.KAl!;lcr!<<'!!7CiH!6bE?!:g'i!<<#u!WN0"s7lZ<s82lsrr<&q
+s8;r2s8N(Ms7ZJcrrE-"rrE&u!!*'!q#K(IrrC4ArW)Kgp]1<n!<E0!!6kHC!<<)u!;-9k!5/@3
+!.k1Ds.KAl!<<)u!!3*"s8N'!rVlitf)PaMao;>@nc/:_r;Q`sbl@YBs8N'!XoJD$JcGHDT`4ul
+r;Zcss8N'!rVlitf)PaM\,ZF-!ri9#rW't<quEetrr@WMpA^lerW)iq!!*'!!!)ut!!)*[r;cTl
+rrBM-!!)rs!!'t;rW&turr@WMpA^ofrr<*"!;lcr!<<'!!<)ot!9X=W!;ZZp!.k1?rr<%us8N(M
+s7ZJcrr<&us8N'"rrE*!!!)ut!!)3^rW)osrW)fprr@WMR/d0dJcGHDT`4uls8W*!!<<'!s8N'!
+rVlitkPtP^qu?ZrqZ$QqJcD,;rr@WMpA^fc!W`6#rVlits8Violi6qaqu?Wqqu?ZrJcD,;rr@WM
+pA^fc!!)or!!(sWrrDlprrDrrrr@WMR/d0dJcGHDRK!6ei;`fWq>^Hpqu?ZrSc8Zinc&RhNrT+Z
+JcGHDJcGKErrDlprrDrrr;`MjrW)QirW&&[rW%NLpA]^Dp](6nq>^Hpqu?TpU&Y#jp&FpiOoPC\
+JcGHDJcGKErrDlprrDrrrrAYjrW)QirW&#Zrr@WMpA]^Dp](6nq>^Hpqu?ZrSc8Zinc&RhNrT+Z
+JcGHDT)ScjoD\djlMpkaq>^Hpqu?ZrU]1;oJcGKErr@WMpA^cbrW)fp!!)utrrD?arW)iqrW)iq
+rrAkprW%NLq#C?oJcGHDTDnlks8Vus!<<#urVlitl2Ub`qu?ZrqZ$QqV>pGnJcGQGrr@WMpA^id
+!W`6#s8N'!rr2rurr;uurr2rul2U__rVuisqZ$QqV#UAnJcGQGrr@WMpA^id!W`6#s8N'!rr2ru
+rVlitrr2rukl:GYq>^HpV#U>mJcGTHrr@WMpA^id!W`6#s8N'!rr2rur;Q`ss8N'!k5YA[p](6n
+U]:8mJcGTHrr@WMpA^id!W`6#s8N'!rr3$"rrE#t!W`6#f`1sO_Z'T9m/I%cq#C9mJcGWIrr@WM
+pA^id!W`6#s8N'!rr3!!s7lZIs8N):s8E#rrr<&ks8E#os82lErrN3#!3cG&!.k1Ds.TGo!<3&u
+rr<'!s8N)qrr<&Os8N);s82lrs8E#ls82lms8E#orr<&Qs82lfrr<&7s8N(Ms7ZJdrrN3#!<2uu
+!<<'!!;ZWp!8.>O!5nj9!<3#r!;uj!!<3'!quH]q!!)utrW)fprW(aRq>gBl!!)rsrW'e7rr@WM
+pA^ofqu?m"!<3'!rr<*"!;lcr!8.>O!5ea9!<)rq!<)rl!<<)t!<<)s!;ulp!8RVP!;c`p!<3#r
+!5ed9!.k1Ds.fVl!!*&s!<<)p!8.>O!58F0!<<)f!<<)u!!3*"r;Z`ri;WcWrr;lrqZ$Hnrr;rt
+_>jN8JcGHDTDnlkrr2rupAY*mf`1sO^An!/s8VThs8N0$rrE)u!;uis!9!nV!<3#t!<)ot!<)rs
+!;uis!5SX7!.k1Ds.B;k!<2uu!;?Em!8.>O!58F0!<)rs!<<)j!!*&s!8RVP!<2uu!<)rr!!E6$
+rrBV0rr@WMpA^cb!!*#u!!)lqrW!!!!8.>O!5/=3!<<'#!<3'!s82lss763js8E#Ps8;ros7lZ)
+s8N(Ms7ZJbrr<&urr<&rs8N)urr<&Os8N)6s8N)ss60O_rr<&Ss8N'!s82lsrr<'!s7QH(s8N(M
+s7ZJbrr<&orr<&srr<&Os8N)7s8;p!rrE)n!!*&m!!E6$rrDlp!!)'Zk5`-orr@WMpA^cb!!(+?
+rrBn8o`,!lmf3@frW)iqrW)<b!!)orjT#>]!<<'!!5\^8!.k1Ds.B>_!7h,L!5SWk!<)rq!:Kmd
+!;lfS!5ed9!.k1Ds,m?]!8%8N!5\^6!!*&X!<)rs!:Kmb!;lfS!5nj:!.k1Ds,[0[!8.>O!5ed6
+!<<)X!<)ot!:9a_!<3#T!6"p;!.k1Ds,R*Z!87DP!5ng;!<<#us8UsVkPtDZ!<:mUqYpNqbQ%SB
+JcGHDJcFj3rrC";rW!!!!<<)V!9O73!<)rs!6kKC!.k1Ds+143s8N)<s82lss5!b9s5*eVs7u`q
+s8)fAs8N(Ms7ZJDs5j:\!65&h!9O72!<<)r!71]F!.k1Ds+143s8N)<s4.24s4%,Js8)fCs8N(M
+s7ZJDs5j:\!6"oh!!3*"nGiLgqu>4Ir;Qcts8E#Es8N(Ms7ZJDs5j:\!6"oi!!*&u!:p0g!<)rI
+!<3#t!!3*"cN!nEJcGHDJcFj3rrC.?!!*'!dK&q>qZ-Tpe,TLKquG"Arr@WMpA]^Djo>>\aoD>?
+s8URKo)JXgr;Y:Irr;rtbl@\CJcGHDJcFj3rrC4AquHcseH#.>rrDuseH#OI!!(4Brr@WMpA]^D
+jo>>\aoD>?rr:IJm/PN7!WN0!rr<&Cs8N(Ms7ZJDs5j:\!6P9?!<<)K!:'U3!!*&u!6tQD!.k1D
+s+143s8N)As82lss4.26rrE-"cN)8jrr@WMpA]^Djo>>\b5]`ekl8s/c2[eDJcGHDJcFj3rrC1@
+ciE8/ciD;irr@WMpA]^Djo>>\aT'cj!<<'!n,E@fqZ"qCb5_JAJcGHDJcFj3rrC+>eH#%;rW)iq
+dK%Dhrr@WMpA]^Djo>>\`rFTirr2ruoDe^grVt:GaT)8?JcGHDJcFj3rrC1@!!*'!eGoULrW)Qi
+rW)osciD2frr@WMpA]^Djo>>\b5_G@s8UIHoD\djqu>%DaoDA@JcGHDJcFj3rrC7BquHcs!<E/R
+!<<)u!:0[3!6Y?A!.k1Ds+143s8N)As8E#srrE-"gAq6Q!!)9`dK%Dhrr@WMpA]^Djo>>\ao;>@
+rVtILjo<p4s8W&ub5_JAJcGHDJcFj3rrC%<f)Xh1rW)uui;`oY!<<)s!6bEB!.k1Ds+143s8N);
+s82iss5*h7s8N*!s5<tUs8;r@s8N(Ms7ZJDs5j:\!5nj9!<3#V!9=(Z!<<)]!!*&o!;ulq!6kKC
+!.k1Ds+143s8N)9rr<&us5!b;s5F"Ys7ZNls82lAs8N(Ms7ZJDs7--h!;HNn!5AKj!<<'!!9jI7
+!;lfq!6kKC!.k1Ds+14?s8N)ns8N)6s5!_Us8E#`s7QHms60L`s8;rnrr<&Bs8N(Ms7ZJDs7?9h
+!;HNn!5AL/!!*&c!!*&p!:'UX!<<)`!!*&u!5ed9!.k1Ds+14Cs8)fjs8N)6s7lWrrrE)u!!*&i
+!<<)q!9jF`!<<#u!<<#urVllus7H?ls7?</s8N(Ms7ZJDs7QEh!;HNn!5SX1!!*&c!<)rs!!3*"
+jSo2[rr2rurr2rurVuHh!<;fopAY*mcN!nEJcGHDJcG9?rrDfnrrC(=!!)orrW)uu!<E/g!<<'!
+!;lcr!8@JP!<<)f!!<0#s8E#ls8E#Es8N(Ms7ZJDs7--h!;HNn!6>-=!;lcr!<<)u!!*&g!7CiE
+!<<)f!<2uu!;?Hj!7:cG!.k1Ds+14?s8N)ns8;r?s82lns82iss6p$9s8E#ss8;rss8N'!s8)fc
+s8E#Fs8E"Ls7ZJDs7--h!;HNl!6P9?!;QTn!!*&l!<<)u!71ZF!;c]q!;ZWp!<<'!!:Kje!71]E
+!.k1Ds+14Ms8)fls8N)ns8N)=rr<&mrr<&us8E#ts8E#rrr<&mrr<%Ms8N&u!.k1Ds+14Ms8)fl
+s8N)ns8N),rr<&srr<&qrr<&os8E"Ls8W-!!.k1Ds+14?s8N)ns8N)(rr<&ps8E#ps82lJrr<&#
+s8N(Ms7ZJDs7--h!;HNn!4)Y(!;lfo!;c`p!7q2L!3Q;$!.k1Ds+14?s8N)ns8N)*s82los82ln
+rr<&Ms8)f"s8N(Ms7ZJDs7--h!;HNn!4)Y(!;ZZm!7(WA!3lM'!.k1Ds+14?s8N)ns8N)(rr<&n
+s8E#Bs8)f$s8N(Ms7ZJDs7--h!;HNn!2]\q!6P9?!3lM'!.k1Ds+143s8N(Ms6K[b!3cG&!.k1D
+s+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid
+!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(M
+s-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143
+s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1D
+s+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid
+!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(M
+s-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143
+s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1D
+s+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid
+!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(M
+s-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+143s8N(Ms-Wid!.k1Ds+14B
+s8)fks8N(Ms-Wid!.k1Ds+14Cs7lZjs8N(Ms-Wid!.k1Ds+14Ds8E#ss8E#ps8N(Ms-Wid!.k1D
+s+14Es8E#ps8N)rs8N(Ms-Wid!.k1Ds+14Es8N)ps8N)rs8N(Ms-Wid!.k1Ds+14Es8N)ps8N)r
+s8N(Ys8N(Zs8N(Ms7ZJDs6]jd!;lfr!0.$Y!07*Z!.k1Ds+14<s8N)qs+(07!.k1Ds+14>s8;ro
+s+(07!.k1Ds+14Ms8)fls8E"Ls+13$rrE(Ms8W,r!;lfp!.k0$s+14Ms+14Cs8;qKs+13$s8DtK
+s7ZKl!.k0$s+14Is+14Ds8N(Ms+13$s8)bHs7cQn!.k0$s+14Gs+14Es7HACs+13&s+14Es7HAC
+s+13&s+13$s+13$s6]i;s+13$s+14;s+13$s+13$s6]i;s6'FZ!0I6Z!0R<Y!.k1Fs+146s7lYY
+s7lYZs7lYGs7u\Gs69R_!<)rs!1!T`!<)rs!1*Za!<)rs!.k1Hs+148s8E#ps8N(bs8N)rs8N(c
+s8E#ps8N(Ms82hIs6BXa!;ZZp!13`b!;lfq!1<fd!;ZZp!.k1Is+148s8N)ps8N(cs8N)ps8N(d
+s8N)ps8N(Ms82hIs5<qW!13`c!;ZZp!07*Z!.k1Is+14/s8N(bs8N)ps8N([s8N(Ms8)bHs5X.X
+!1*Zb!;ZZp!0R<[!.k1Hs+14@s8)fls8E"_s8N)ps8N(^s8E"Ls7lVFs763e!;lfp!0dH_!;ZZp
+!0mN^!.k1Es+146s8;q[s8N)ps8N(bs8;qKs7QDCs69R_!0@0Z!;lfq!13`b!.k1As+147s8N(Y
+s8N)rs8N(bs8N(Ms762@s6BXa!0$sW!<)rs!13`c!.k1?s+148s7HAWs7lY\s7HACs82hIs6BXW
+!0dH]!0mNV!.k1Is+13$s+13$s6]i;s+13$s+14;s+13$s+13$s6]i;s+13$s+14;s+13$s+13$
+s6]i;s+13$s+14;s+13$s+13$s6]i;s+13$s+14;s+13$s+13$s6]i;s+14Ks8N)drr<%Ms+p]+
+s+14Js8N)es8N(Ms,$c,s+14Js8N)drr<&qs7u_Hs-Nb:s+LCP!;c]q!;ZWp!;6?l!<3#u!<<'!
+!<)rt!.k0:s+13's7lWps7ZNjs82iss8E#srr<&trr<%Ms-E\9s+ULQ!:p0i!;ZWp!;lcr!<)ot
+!<)ot!.k09s+13)s8E#trr<&ts8N)trr<&mrr<&ts8N)trr<&urr<%Ms-<V8s+^RR!<)rt!<3#u
+!:g*h!<2uu!;uis!<2uu!.k08s+13$s8W-!!<<*!!:^!g!<2uu!;uis!<<'!!.k07s+13$s8N#u
+!<<*!!:g'h!<2uu!<3#u!!3*"s8N'!JcCu7JcC?%!!)orrrD]knc8^i!!%TMPlH=7K)bfMrVult
+k5PD]rr2ruJcD#8JcC<$rrE#t!!)-\!!)ut!!%TMQN)O9Jc>cN!<)ot!;lfr!;ZZi!<2uu!<)rt
+!.k0:s+13)s6Ka^rr<&rrr<&trr<&srr<%Ms-Nb:s+14Js8N)hrr<&rrr<&trr<&srr<%Ms-Nb:
+s+14Jrr<&grr<&rrr<&trr<&ts8N(Ms-Nb:s+14Ks82lgrr<&rrr<&ts7u_Hs-Nb:s+14Ls8N)t
+s8E#lrr<&rrr<&trr<&us8N(Ms-E\9s+14Ms8N)rs8;rms7lZnrr<%Ms,m>4s+14L!;QTo!;QQo
+!;lcr!<)ot!.k04s+13&s8N)krr<&orr<&mrr<%Ms,m>4s+^RQ!.k0$s6K]9s+13$s+14;s+13$
+s+13$s6]i;s+13$s+14;s+13$s+13$s6]i;s+13$s+14;rr~> Z
+; LH
+(%%[Page: 1]%%) = 
+%%PageTrailer
+
+%%Trailer
+%%BoundingBox: 14 13 581 828
+%%DocumentNeededResources: 
+%%DocumentSuppliedResources: 
+%%+ procset Pscript_WinNT_ErrorHandler 5.0 0
+%%+ procset Pscript_FatalError 5.0 0
+%%+ procset Pscript_Win_Basic 5.0 0
+%%+ procset Pscript_Win_Utils_L2 5.0 0
+%%+ procset Pscript_Win_Dib_L2 5.0 0
+Pscript_WinNT_Incr dup /terminate get exec
+ehsave restore
+%%Pages: 1
+(%%[LastPage]%%) = 
+%%EOF
+%-12345X@PJL EOJ

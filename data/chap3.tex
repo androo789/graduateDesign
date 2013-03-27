@@ -72,7 +72,7 @@
 \end{bmatrix}    
     \label{equ:3.5}
 \end{eqnarray}
-$\omega_n$为均值为$0$,方差为$\sigma_n^2$的高斯白噪声。
+$\omega_n$为均值为$0$,方差为$\sigma_{\omega,n}^2$的高斯白噪声。
 
 假设噪声$\omega_n$是独立同分布的(i.i.d)，可以得到：
 \begin{eqnarray}
@@ -160,7 +160,7 @@ m$的情况下，$\mathrm{Cov}(x_n,x_m)=0$。所以协方差矩阵$\mathrm{Cov}(
         \mathbf{V}_n&\mathrm{Cov}(x_n,x_n)=\mathrm{diag}(\upsilon_{n-M-N_2+1},\cdots,\upsilon_{n+N_1})\\
         \mathbf{s}_n&\mathbf{H}_n[\mathbf{0}_{1\times(N_2+M-1)}\;1\;\mathbf{0}_{1\times
         N_1}]^{\mathrm{T}}\\
-        \boldsymbol{\Sigma}_n&\mathrm{Cov}(\mathbf{z}_n,\mathbf{z}_n)=(\sigma_{\omega}^2\mathbf{I}_N+\mathbf{H}_n\mathbf{V}_n\mathbf{H}_n^{\mathrm{H}})\\
+        \boldsymbol{\Sigma}_n&\mathrm{Cov}(\mathbf{z}_n,\mathbf{z}_n)=(\sigma_{\omega,n}^2\mathbf{I}_N+\mathbf{H}_n\mathbf{V}_n\mathbf{H}_n^{\mathrm{H}})\\
     \end{array}
     \label{equ:3.10}
 \end{eqnarray}
@@ -322,7 +322,7 @@ $\hat{x}_n$的统计量$\mu_{n,i}$和$\sigma_{n,i}^2$如下：
 \end{eqnarray}
 其中，用到了Hermitian矩阵的逆依然是Hermitian矩阵这一性质。从上式可以发现，$\boldsymbol{\Sigma}_{\mathrm{P}}$和$\boldsymbol{\Sigma}_{\mathrm{N}}$是一致的：
 \begin{eqnarray}
-    \boldsymbol{\Sigma}_{\mathrm{P}}=\boldsymbol{\Sigma}_{\mathrm{N}}=\sigma_{\omega}^2\mathbf{I}_{\mathrm{N}}+{\mathbf{H}}'_n\mathrm{diag}[\upsilon_{n-M+N_2+2},\cdots,\upsilon_{n+N_1}]{{\mathbf{H}}'}_n^{\mathrm{H}}
+    \boldsymbol{\Sigma}_{\mathrm{P}}=\boldsymbol{\Sigma}_{\mathrm{N}}=\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{N}}+{\mathbf{H}}'_n\mathrm{diag}[\upsilon_{n-M+N_2+2},\cdots,\upsilon_{n+N_1}]{{\mathbf{H}}'}_n^{\mathrm{H}}
     \label{equ:3.26}
 \end{eqnarray}
 其中，${\mathbf{H}}'$是$(N-1)\times(N+M-2)$的信道卷积矩阵。基于这个事实，递归算法从$\mathbf{U}_n$计算$\boldsymbol{\Sigma}_n^{-1}$，并令$\boldsymbol{\Sigma}_{\mathrm{P}}^{-1}=\boldsymbol{\Sigma}_{\mathrm{N}}^{-1}$，进而从$\boldsymbol{\Sigma}_{\mathrm{N}}^{-1}$计算得到$\mathbf{U}_{n+1}$。
@@ -389,7 +389,7 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
     \begin{itemize}
         \item[-]  星座图映射$\mathcal{S}={\alpha_1,\cdots,\alpha_{2^Q}}$，
         \item[-]  滤波器长度$N_1$和$N_2$，
-        \item[-]  信道特征$h_k,k=0,\cdots,M-1$和$\sigma_{\omega}^2$，
+        \item[-]  信道特征$h_k,k=0,\cdots,M-1$和$\sigma_{\omega,n}^2$，
         \item[-]  接收符号$z_n,n=1-N_2,\cdots,L+N_1$，
         \item[-]
             先验信息$L_e^{\mathrm{D}}(c_{n,j}),n=1-N_2+M+1,\cdots,L+N_1,j=1,\cdots,Q$，
@@ -407,7 +407,7 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
         \item[-]   计算$\bar{x}_n$和$\upsilon_n,n=1-N_2-M+1,\cdots,L+N_1$，
         \item[-]   计算$\bar{z}_n,n=1-N_2,\cdots,L+N_1$，
         \item[-]
-            计算$\tilde{\mathbf{U}}=(\sigma_{\omega}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}_1\mathbf{V}_1\mathbf{H}_1^{\mathrm{H}})^{-1}$，
+            计算$\tilde{\mathbf{U}}=(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}_1\mathbf{V}_1\mathbf{H}_1^{\mathrm{H}})^{-1}$，
     \end{itemize}
     \vspace{5mm}
 \end{minipage}\\
@@ -448,7 +448,7 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
      \qquad    $\mathbf{U}=\mathbf{U}-\mathbf{u}\mathbf{u}^{\mathrm{H}}/u$,
 
      \qquad
-     $\begin{bmatrix}\mathbf{u}&u\end{bmatrix}=\begin{bmatrix}\mathbf{0}_{\mathrm{N}-1}\\\sigma_{\omega}^2\end{bmatrix}=\mathbf{H}_{n+1}\mathbf{V}_{n+1}\mathbf{H}_{n+1}^{\mathrm{H}}$,
+     $\begin{bmatrix}\mathbf{u}&u\end{bmatrix}=\begin{bmatrix}\mathbf{0}_{\mathrm{N}-1}\\\sigma_{\omega,n}^2\end{bmatrix}=\mathbf{H}_{n+1}\mathbf{V}_{n+1}\mathbf{H}_{n+1}^{\mathrm{H}}$,
 
         \qquad ${\mathbf{u}}'=\mathbf{U}\mathbf{u}$,
 
@@ -469,11 +469,11 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
     \hline
 \end{longtable}
 \section{低复杂度近似算法}
-为了进一步减少计算量，寻找不随$n$变化的滤波器系数$\mathbf{f}\overset{\Delta}{=}[f_{N_2}^*,f_{N_2-1}^*,\cdots,f_{-N_1}^*]$，提出MMSE均衡算法的低复杂度近似解决方案来代替式\ref{3.13}获取$\hat{x}_n$。其中，利用$\boldsymbol{\Sigma}_n+(1-\upsilon_n)\mathbf{s}\mathbf{s}^{\mathrm{H}}$的时间平均值来代替变化值：
+为了进一步减少计算量，寻找不随$n$变化的滤波器系数$\mathbf{f}\overset{\Delta}{=}[f_{N_2}^*,f_{N_2-1}^*,\cdots,f_{-N_1}^*]$，提出MMSE均衡算法的低复杂度近似解决方案来代替式\ref{equ:3.13}获取$\hat{x}_n$。其中，利用$\boldsymbol{\Sigma}_n+(1-\upsilon_n)\mathbf{s}\mathbf{s}^{\mathrm{H}}$的时间平均值来代替变化值：
 \begin{eqnarray}
     \begin{array}{l@{\,}l}
         {\mathbf{f}}'&\overset{\Delta}{=}\left(\frac{1}{L}\sum\limits_{n=1}^{L}\boldsymbol{\Sigma}_n+(1-\upsilon_n)\mathbf{s}\mathbf{s}^{\mathrm{H}}\gamma\right)\\
-        &=(\sigma_{\omega}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}\bar{\mathbf{V}}\mathbf{H}^{\mathrm{H}}\gamma\gamma+(1-\bar{\upsilon})\mathbf{s}\mathbf{s}^{\mathrm{H}})^{-1}\mathbf{s}
+        &=(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}\bar{\mathbf{V}}\mathbf{H}^{\mathrm{H}}\gamma\gamma+(1-\bar{\upsilon})\mathbf{s}\mathbf{s}^{\mathrm{H}})^{-1}\mathbf{s}
     \end{array}
     \label{equ:3.30}
 \end{eqnarray}
@@ -484,7 +484,7 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
 \end{eqnarray}
 定义向量：
 \begin{eqnarray}
-    \mathbf{f}\overset{\Delta}{=}(\sigma_{\omega}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}\bar{\mathbf{V}}\mathbf{H}^{\mathrm{H}})^{-1}\mathbf{s}
+    \mathbf{f}\overset{\Delta}{=}(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}\bar{\mathbf{V}}\mathbf{H}^{\mathrm{H}})^{-1}\mathbf{s}
     \label{equ:3.32}
 \end{eqnarray}
 与上面算法相类似，${\mathbf{f}}'$也是$\mathbf{f}$的伸展：
@@ -504,24 +504,26 @@ $\hat{x}_n$的均值和方差可以计算如下：
 \end{eqnarray}
 其中$K\overset{\Delta}{=}(1+(1-\bar{\upsilon})\mathbf{s}^{\mathrm{H}}\mathbf{f})^{-1}$，从而得到：
 \begin{eqnarray}
-    \rho_{n,i}=\frac{|\mathbf{f}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})-\alpha_i\mathbf{f}^{\mathrm{H}}\mathbf{s}|^2}{\mathbf{f}^{\mathrm{H}}(\sigma_{\omega}^2\mathbf{I}_{\mathrm{H}}+\mathbf{H}\mathbf{V}_n\mathbf{H}^{\mathrm{H}}-\upsilon_n\mathbf{s}\mathbf{s}^{\mathrm{H}})\mathbf{f}}
+    \rho_{n,i}=\frac{|\mathbf{f}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})-\alpha_i\mathbf{f}^{\mathrm{H}}\mathbf{s}|^2}{\mathbf{f}^{\mathrm{H}}(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{H}}+\mathbf{H}\mathbf{V}_n\mathbf{H}^{\mathrm{H}}-\upsilon_n\mathbf{s}\mathbf{s}^{\mathrm{H}})\mathbf{f}}
     \label{equ:3.35}
 \end{eqnarray}
 利用式\ref{equ:3.17}可以求出均衡器输出的外部软信息$L_e^E(c_{n,j})$。
 
 对于$L$很长的情况下，$\bar{\mathbf{V}}$可以用$\bar{\upsilon}\mathbf{I}_{\mathrm{N+M}-1}$代替，而此中替换对于SISO均衡器的性能影响很小，因此可以简化$\mathbf{f}$为：
 \begin{eqnarray}
-    \hat{\mathbf{f}}\overset{\Delta}{=}(\sigma_{\omega}^2\mathbf{I}_{\mathrm{N}}+\bar{\upsilon}\mathbf{H}\mathbf{H}^{\mathrm{H}})^{-1}\mathbf{s}
+    \hat{\mathbf{f}}\overset{\Delta}{=}(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{N}}+\bar{\upsilon}\mathbf{H}\mathbf{H}^{\mathrm{H}})^{-1}\mathbf{s}
     \label{equ:3.36}
 \end{eqnarray}
 $\rho_{n,i}$可以简化如下：
 \begin{eqnarray}
     \begin{array}{c}
         \frac{\displaystyle
-        |\mathbf{f}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})-\alpha_i\mathbf{f}^{\mathrm{H}}\mathbf{s}|^2}{\displaystyle \mathbf{f}^{\mathrm{H}}(\sigma_{\omega}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}\mathbf{V}_n\mathbf{H}^{\mathbf{H}}-\upsilon_n\mathbf{s}\mathbf{s}^{\mathrm{H}})\mathbf{f}}\\
+        |\mathbf{f}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})-\alpha_i\mathbf{f}^{\mathrm{H}}\mathbf{s}|^2}{\displaystyle
+        \mathbf{f}^{\mathrm{H}}(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}\mathbf{V}_n\mathbf{H}^{\mathbf{H}}-\upsilon_n\mathbf{s}\mathbf{s}^{\mathrm{H}})\mathbf{f}}\\
         \approx
         \frac{\displaystyle
-        |\hat{\mathbf{f}}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})-\alpha_i\hat{\mathbf{f}}^{\mathrm{H}}\mathbf{s}|^2}{\displaystyle \hat{\mathbf{f}}^{\mathrm{H}}(\sigma_{\omega}^2\mathbf{I}_{\mathrm{N}}+\bar{\upsilon}(\mathbf{H}\mathbf{H}^{\mathrm{H}}-\mathbf{s}\mathbf{s}^{\mathrm{H}}))\hat{\mathbf{f}}}\\
+        |\hat{\mathbf{f}}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})-\alpha_i\hat{\mathbf{f}}^{\mathrm{H}}\mathbf{s}|^2}{\displaystyle
+        \hat{\mathbf{f}}^{\mathrm{H}}(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{N}}+\bar{\upsilon}(\mathbf{H}\mathbf{H}^{\mathrm{H}}-\mathbf{s}\mathbf{s}^{\mathrm{H}}))\hat{\mathbf{f}}}\\
         =\frac{\displaystyle
         |\hat{\mathbf{f}}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})-\alpha_i\hat{\mathbf{f}}^{\mathrm{H}}\mathbf{s}|^2}{\displaystyle \hat{\mathbf{f}}^{\mathrm{H}}\mathbf{s}(1-\mathbf{s}^{\mathrm{H}}\hat{\mathbf{f}})}
     \end{array}
@@ -540,8 +542,8 @@ $\rho_{n,i}$可以简化如下：
     \hline
 $
 \mu=\hat{\mathbf{f}}^{\mathrm{H}}\mathbf{s},\mathbf{p}=\mathbf{H}^{\mathrm{H}}\hat{\mathbf{f}},K_f=\hat{\mathbf{f}}^{\mathrm{H}}\hat{\mathbf{f}},x=\hat{\mathbf{f}}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s}),$\\
-$L_e^E(c_{n,1})=\sqrt{8}\cdot\mu\mathrm{Re}(x)/(\sigma_{\omega}^2K_f+\mathbf{p}^{\mathrm{H}}\mathbf{V}_n\mathbf{p}-\upsilon_n|\mu|^2),$\\
-$L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega}^2K_f+\mathbf{p}^{\mathrm{H}}\mathbf{V}_n\mathbf{p}-\upsilon_n|\mu|^2),$\\
+$L_e^E(c_{n,1})=\sqrt{8}\cdot\mu\mathrm{Re}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p}^{\mathrm{H}}\mathbf{V}_n\mathbf{p}-\upsilon_n|\mu|^2),$\\
+$L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p}^{\mathrm{H}}\mathbf{V}_n\mathbf{p}-\upsilon_n|\mu|^2),$\\
     \hline
   \end{tabular}
 \end{threeparttable}
