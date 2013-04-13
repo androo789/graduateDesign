@@ -24,17 +24,26 @@ decoding algorithm, the error of convolutional code which constraint length is
 theory of the book, also the running time is with delay. Therefore, the
 system needs to a buffer to store the decoding data; The $RS(15,9,7)$with BM decoding algorithm, the error rate has been greatly improved and the running time is very short. So the system does not need to buffer the decoding data.
 
+In the low signal to noise ratio of acoustic communication system,
+   convolutional code and RS code are adopted to improve the reliability of
+   information transmission.For convolutional code, using sequential
+   decoding method to simplify the decoding algorithm and to improve the
+   efficiency. The fano algorithm is one of the sequential decoding methods
+   which is small space spending, relatively simple to achieve and used
+   widely in reality. So, finally taking it as the decoding algorithm. For RS code, BM algorithm is almost the most widely one among all decding algorithms.
+
+Determining the coding parameters by matlab simulation and test decoding
+efficiency in PC/104.
+
+Through test data, several conclusions can be obtained. With sequential
+decoding algorithm, the error of convolutional code which constraint length is
+24 can be very good to meet the requirements and be consistent with the
+theory of the book, also the running time is with delay. Therefore, the
+system needs to a buffer to store the decoding data; The $RS(15,9,7)$with BM decoding algorithm, the error rate has been greatly improved and the running time is very short. So the system does not need to buffer the decoding data.
 \vspace{1em}
 
+\thispagestyle{plainabstracte}
 \noindent\textbf{Keywords}
 
 Low SNR \quad Underwater acoustic communication \quad Convolutional code
 \quad RS code
-%%============================================================O
-% empty page for two-page print
-\ifthenelse{\equal{\ioaside}{T}}{%
-  \newpage\mbox{}%
-  \thispagestyle{empty}}{}
-
-%%============================================================
-

@@ -32,8 +32,9 @@ TCM\citep{ungerboeck1982,Coded2004,Schlegel2004}把编码和调制作为一个�
 虽然本文提出的算法能够用于水声相干通信系统之中，但是在水声信道特性比较差的情况下，需要均衡器和信道估计器的长度很长，从而会导致运算复杂度的增加，不能实现实时通信，为了改变这一状况，可以采用时间反转技术与本文提出的均衡技术相结合。时间反转技术可以利用多通道信道信息并使得信道的码间干扰大大减少，一般来说均衡器长度为5，信道估计器的长度为4就可以无差错译码。
 %%========================================================================
 % empty page for two-page print
-\ifthenelse{\equal{\ioaside}{T}}{%
-  \newpage\mbox{}%
-  \thispagestyle{empty}}{}
+%\ifthenelse{\equal{\ioaside}{T}}{%
+%  \newpage\mbox{}%
+%  \thispagestyle{empty}}{}
 %%========================================================================
 %\end{document}
+\clearpage{\pagestyle{empty}\cleardoublepage}

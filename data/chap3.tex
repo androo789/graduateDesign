@@ -62,7 +62,7 @@
     \label{equ:3.4}
 \end{eqnarray}
 其中,$\mathbf{x}_n\overset{\Delta}{=}[x_{n-N_2-M+1},x_{n-N_2-M+2},\cdots,x_{n+N_1}]^{\mathrm{T}}$为发送符号序列，$H$为$N\times
-(N+M-1)$的信道矩阵，$M$为信道冲击响应长度：
+(N+M-1)$的信道矩阵，$M$为信道冲激响应长度：
 \begin{eqnarray}
 \mathbf{H}_n\overset{\Delta}{=}\begin{bmatrix}
  h_{M-1}&h_{M-2}  &\cdots  & h_0 & 0 & \cdots &  &0 \\ 
@@ -755,7 +755,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 参数如表\ref{tab:3.9}，仿真结果如图\ref{fig:3.6}
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_punture_separate.pdf}
+    \includegraphics[width=\textwidth]{images/different_puncture_separate.pdf}
   \end{center}
   \caption{不同删余方式下均衡性能的比较}
   \label{fig:3.6}
@@ -829,7 +829,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
     z_{n,i}=\sum_{l=0}^{M-1}h_{n,l,i}x_{n-l}+\omega_{n,i},\;i\in\{0,1\}
     \label{equ:3.38}
 \end{eqnarray}
-其中$\mathbf{h}_{n,i}=[h_{n,0,i},\cdots,h_{n,M-1,i}]^{\mathrm{T}}$为分数间隔时变信道冲击响应。依然假设$N$为符号速率均衡器长度，那么真实的均衡器(分数间隔均衡器)长度为$2N$，因此，为了计算此时的发送符号的估计值$\hat{x}_n$，需要知道$2N$个长度的接收符号$z_{n,i}$以及$N+M-1$个长度的关于发送符号$x_n$的先验信息。重新定义向量$\mathbf{z}_n$和$\boldsymbol{\omega}_n$，使其长度为$2N$。
+其中$\mathbf{h}_{n,i}=[h_{n,0,i},\cdots,h_{n,M-1,i}]^{\mathrm{T}}$为分数间隔时变信道冲激响应。依然假设$N$为符号速率均衡器长度，那么真实的均衡器(分数间隔均衡器)长度为$2N$，因此，为了计算此时的发送符号的估计值$\hat{x}_n$，需要知道$2N$个长度的接收符号$z_{n,i}$以及$N+M-1$个长度的关于发送符号$x_n$的先验信息。重新定义向量$\mathbf{z}_n$和$\boldsymbol{\omega}_n$，使其长度为$2N$。
 \begin{eqnarray}
     \begin{array}{l@{\;=\;}l}
         \mathbf{z}_n&[z_{n+\mathrm{N}_1,1},z_{n+\mathrm{N}_1,0},z_{n+\mathrm{N}_1-1,1},\cdots,z_{n-\mathrm{N}_2,1},z_{n-\mathrm{N}_2,0}]^{\mathrm{T}}\\
@@ -963,8 +963,9 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 本章最后介绍了在发送端可以加入预编码来提高均衡性能，但是针对水声相干通信的特点，本文并没有采用这种方案。
 %%========================================================================
 % empty page for two-page print
-\ifthenelse{\equal{\ioaside}{T}}{%
-  \newpage\mbox{}%
-  \thispagestyle{empty}}{}
+%\ifthenelse{\equal{\ioaside}{T}}{%
+%  \newpage\mbox{}%
+%  \thispagestyle{empty}}{}
 %%========================================================================
 %\end{document}
+\clearpage{\pagestyle{empty}\cleardoublepage}
