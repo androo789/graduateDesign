@@ -9,7 +9,7 @@
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{images/mmse2.pdf}
+    \includegraphics[width=0.9\textwidth]{images/mmse2.pdf}
   \end{center}
   \caption{基于MMSE-LE的接收端}
   \label{fig:3.1}
@@ -98,7 +98,7 @@ m$的情况下，$\mathrm{Cov}(x_n,x_m)=0$。所以协方差矩阵$\mathrm{Cov}(
     \end{array}
     \label{equ:3.7}
 \end{eqnarray}
-式\ref{equ:3.5}中概率$P(c_{n,j})$是对数似然比$L_e^{\mathrm{D}}(c_{n,j})$的函数，
+式(\ref{equ:3.5})中概率$P(c_{n,j})$是对数似然比$L_e^{\mathrm{D}}(c_{n,j})$的函数，
 \begin{eqnarray}
     \begin{array}{l@{\;=\;}l}
         \displaystyle
@@ -154,7 +154,7 @@ m$的情况下，$\mathrm{Cov}(x_n,x_m)=0$。所以协方差矩阵$\mathrm{Cov}(
 
 利用$\bar{x}_n$和$\upsilon_n$给出以下定义：
 \begin{eqnarray}
-    \begin{array}{l@{\overset{\Delta}{=}}l}
+    \begin{array}{l@{\;\overset{\Delta}{=}\;}l}
         \bar{z}_n&\mathrm{E}(z_n)=\displaystyle\sum_{k=0}^{M-1}h_k\bar{x}_{n-k}\\
         \bar{\mathbf{z}}_n&\mathrm{E}(\mathbf{z}_n)=[\bar{z}_{n-N_2},\bar{z}_{n-N_2+1},\cdots,\bar{z}_{n+N_1}]^{\mathrm{T}}\\
         \mathbf{V}_n&\mathrm{Cov}(x_n,x_n)=\mathrm{diag}(\upsilon_{n-M-N_2+1},\cdots,\upsilon_{n+N_1})\\
@@ -204,7 +204,7 @@ m$的情况下，$\mathrm{Cov}(x_n,x_m)=0$。所以协方差矩阵$\mathrm{Cov}(
 \end{eqnarray}
 其中，$K_n\overset{\Delta}{=}(1+(1-\upsilon_n)\mathbf{f}_n^{\mathrm{H}}\mathbf{s}_n)^{-1}$
 \subsection{映射}
-上一节已经得到了发送符号的估计值$\hat{x}_n$，对于传统线性均衡器来说，其结果可以直接给译码器，最后得到译码结果。但是，由于采用的是Turbo均衡算法，因此译码器采用软输入软输出算法，因此，需要关于发送符号的软信息。具体可以看图\ref{fig:3.2}。
+上一节已经得到了发送符号的估计值$\hat{x}_n$，对于传统线性均衡器来说，其结果可以直接给译码器，最后得到译码结果。但是，由于采用的是Turbo均衡算法，所以译码器采用软输入软输出算法，因此，需要关于发送符号的软信息。具体可以参考图\ref{fig:3.2}。
 
 基于MMSE准则的线性Turbo均衡器计算其后验对数似然比LLR值：
 \begin{eqnarray}
@@ -347,7 +347,7 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
     \end{array}
     \label{equ:3.28}
 \end{eqnarray}
-其中，利用中间向量${\boldsymbol{\sigma}}'_{\mathrm{N}}$来简化算法。矩阵$\boldsymbol{\Sigma}_{\mathrm{N}}^{-1}$和矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}^{-1}$是相等的，而且$\boldsymbol{\sigma}_{\mathrm{N}}$和$\sigma_{\mathrm{N}}$可以利用式\ref{equ:3.12}和\ref{equ:3.27}得到：
+其中，利用中间向量${\boldsymbol{\sigma}}'_{\mathrm{N}}$来简化算法。矩阵$\boldsymbol{\Sigma}_{\mathrm{N}}^{-1}$和矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}^{-1}$是相等的，而且$\boldsymbol{\sigma}_{\mathrm{N}}$和$\sigma_{\mathrm{N}}$可以利用式(\ref{equ:3.12})和(\ref{equ:3.27})得到：
 \begin{eqnarray}
     \begin{bmatrix}
         \boldsymbol{\sigma}_{\mathrm{N}}\\
@@ -366,7 +366,7 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
     \label{equ:3.29}
 \end{eqnarray}
 
-此时，可以利用$\mathbf{U}_{\mathrm{N}}$，$\mathbf{u}_{\mathrm{N}}$和$u_{\mathrm{N}}$计算出$\mathbf{U}_n$，从而形成完整的递归算法。当$\mathbf{f}_{n+1}=\boldsymbol{\Sigma}_{n+1}^{-1}\mathbf{s}_{n+1}$得到之后，就可以利用式\ref{equ:3.21}求解出外部信息$L_e^E(c_{n+1,j})$。
+此时，可以利用$\mathbf{U}_{\mathrm{N}}$，$\mathbf{u}_{\mathrm{N}}$和$u_{\mathrm{N}}$计算出$\mathbf{U}_n$，从而形成完整的递归算法。当$\mathbf{f}_{n+1}=\boldsymbol{\Sigma}_{n+1}^{-1}\mathbf{s}_{n+1}$得到之后，就可以利用式(\ref{equ:3.21})求解出外部信息$L_e^{\mathrm{E}}(c_{n+1,j})$。
 
 为了利用这种时间递归算法，$\mathbf{U}_n$在$n=1$的初始化值$\mathbf{U}_1=(\sigma_{\omega}\mathbf{I}_{\mathrm{N}}+\mathbf{H}_1\mathbf{V}_1\mathbf{H}_1^{\mathrm{H}})^{-1}$需要给出。由于算法在训练序列的时候就开始递归计算，因此$\mathbf{V}_1=0$，从而得到$\mathbf{U}_1=\sigma_{\omega}^{-2}\mathbf{I}_{\mathrm{N}}$。算法步骤总结如表\ref{tab:3.4}
 \begin{longtable}{l}
@@ -469,7 +469,7 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
     \hline
 \end{longtable}
 \section{低复杂度近似算法}
-为了进一步减少计算量，寻找不随$n$变化的滤波器系数$\mathbf{f}\overset{\Delta}{=}[f_{N_2}^*,f_{N_2-1}^*,\cdots,f_{-N_1}^*]$，提出MMSE均衡算法的低复杂度近似解决方案来代替式\ref{equ:3.13}获取$\hat{x}_n$。其中，利用$\boldsymbol{\Sigma}_n+(1-\upsilon_n)\mathbf{s}\mathbf{s}^{\mathrm{H}}$的时间平均值来代替变化值：
+为了进一步减少计算量，寻找不随$n$变化的滤波器系数$\mathbf{f}\overset{\Delta}{=}[f_{N_2}^*,f_{N_2-1}^*,\cdots,f_{-N_1}^*]$，提出MMSE均衡算法的低复杂度近似解决方案来代替式(\ref{equ:3.13})获取$\hat{x}_n$。其中，利用$\boldsymbol{\Sigma}_n+(1-\upsilon_n)\mathbf{s}\mathbf{s}^{\mathrm{H}}$的时间平均值来代替变化值：
 \begin{eqnarray}
     \begin{array}{l@{\,}l}
         {\mathbf{f}}'&\overset{\Delta}{=}\left(\frac{1}{L}\sum\limits_{n=1}^{L}\boldsymbol{\Sigma}_n+(1-\upsilon_n)\mathbf{s}\mathbf{s}^{\mathrm{H}}\gamma\right)\\
@@ -507,7 +507,7 @@ $\hat{x}_n$的均值和方差可以计算如下：
     \rho_{n,i}=\frac{|\mathbf{f}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})-\alpha_i\mathbf{f}^{\mathrm{H}}\mathbf{s}|^2}{\mathbf{f}^{\mathrm{H}}(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{H}}+\mathbf{H}\mathbf{V}_n\mathbf{H}^{\mathrm{H}}-\upsilon_n\mathbf{s}\mathbf{s}^{\mathrm{H}})\mathbf{f}}
     \label{equ:3.35}
 \end{eqnarray}
-利用式\ref{equ:3.17}可以求出均衡器输出的外部软信息$L_e^E(c_{n,j})$。
+利用式(\ref{equ:3.17})可以求出均衡器输出的外部软信息$L_e^{\mathrm{E}}(c_{n,j})$。
 
 对于$L$很长的情况下，$\bar{\mathbf{V}}$可以用$\bar{\upsilon}\mathbf{I}_{\mathrm{N+M}-1}$代替，而此中替换对于SISO均衡器的性能影响很小，因此可以简化$\mathbf{f}$为：
 \begin{eqnarray}
@@ -590,15 +590,16 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    编码类型&RSC&递归系统卷积码\\
     \hline
 \end{longtable}
-参数如表\ref{tab:3.6}，仿真结果如图\ref{fig:3.3}
+参数如表\ref{tab:3.6}，仿真结果如图\ref{fig:3.3}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_equalizers_separate.pdf}
+    \includegraphics[width=\textwidth]{images/different_equalizers_separate_bw.pdf}
   \end{center}
   \caption{不同均衡算法的性能比较}
   \label{fig:3.3}
 \end{figure}
-可以从两方面分析图\ref{fig:3.3}，
+
+可以从两方面分析图\ref{fig:3.3}：
 \begin{enumerate}
     \item
         单独分析每一个图，可以看出，随着迭代次数的增加，所有均衡算法的误码率曲线都越来越接近AWGN下的误码率曲线。这说明，随着迭代次数的增加，外部信息被利用的越来越充分。
@@ -645,15 +646,16 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    编码类型&RSC&递归系统卷积码\\
     \hline
 \end{longtable}
-参数如表\ref{tab:3.7}，仿真结果如图\ref{fig:3.4}
+参数如表\ref{tab:3.7}，仿真结果如图\ref{fig:3.4}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_mod_separate.pdf}
+    \includegraphics[width=\textwidth]{images/different_mod_separate_bw.pdf}
   \end{center}
   \caption{不同调制方式下均衡性能的比较}
   \label{fig:3.4}
 \end{figure}
-可以从两方面分析图\ref{fig:3.4}，
+
+可以从两方面分析图\ref{fig:3.4}：
 \begin{enumerate}
     \item
         单独分析每一个图，可以看出，随着迭代次数的增加，所有调制方式下的误码率曲线都越来越接近AWGN下的误码率曲线。这说明，随着迭代次数的增加，外部信息被利用的越来越充分。
@@ -699,15 +701,16 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    编码类型&RSC&递归系统卷积码\\
     \hline
 \end{longtable}
-参数如表\ref{tab:3.8}，仿真结果如图\ref{fig:3.5}
+参数如表\ref{tab:3.8}，仿真结果如图\ref{fig:3.5}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_code_separate.pdf}
+    \includegraphics[width=\textwidth]{images/different_code_separate_bw.pdf}
   \end{center}
   \caption{不同调制方式下均衡性能的比较}
   \label{fig:3.5}
 \end{figure}
-可以从两方面分析图\ref{fig:3.5}，
+
+可以从两方面分析图\ref{fig:3.5}：
 \begin{enumerate}
     \item
         单独分析每一个图，可以看出，随着迭代次数的增加，所有编码方式下的误码率曲线都越来越接近AWGN下的误码率曲线。这说明，随着迭代次数的增加，外部信息被利用的越来越充分。
@@ -752,15 +755,16 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    编码类型&RSC&递归系统卷积码\\
     \hline
 \end{longtable}
-参数如表\ref{tab:3.9}，仿真结果如图\ref{fig:3.6}
+参数如表\ref{tab:3.9}，仿真结果如图\ref{fig:3.6}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_puncture_separate.pdf}
+    \includegraphics[width=\textwidth]{images/different_puncture_separate_bw.pdf}
   \end{center}
   \caption{不同删余方式下均衡性能的比较}
   \label{fig:3.6}
 \end{figure}
-可以从两方面分析图\ref{fig:3.6}，
+
+可以从两方面分析图\ref{fig:3.6}：
 \begin{enumerate}
     \item
         单独分析每一个图，可以看出，随着迭代次数的增加，所有删余方式下的误码率曲线都越来越接近AWGN下的误码率曲线。这说明，随着迭代次数的增加，外部信息被利用的越来越充分。
@@ -805,15 +809,16 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    编码类型&RSC&递归系统卷积码\\
     \hline
 \end{longtable}
-参数如表\ref{tab:3.10}，仿真结果如图\ref{fig:3.7}
+参数如表\ref{tab:3.10}，仿真结果如图\ref{fig:3.7}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_block_length_separate.pdf}
+    \includegraphics[width=\textwidth]{images/different_block_length_separate_bw.pdf}
   \end{center}
   \caption{不同调制方式下均衡性能的比较}
   \label{fig:3.7}
 \end{figure}
-可以从两方面分析图\ref{fig:3.7}，
+
+可以从两方面分析图\ref{fig:3.7}：
 \begin{enumerate}
     \item
         单独分析每一个图，可以看出，随着迭代次数的增加，所有交织长度下的误码率曲线都越来越接近AWGN下的误码率曲线。这说明，随着迭代次数的增加，外部信息被利用的越来越充分。
@@ -822,7 +827,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 \end{enumerate}
 
 \section{分数间隔线性SISO均衡算法}
-上面介绍的都是采用符号采样率的均衡器，这在多普勒比较严重的水声信道中容易产生相位翻转的现象，为了解决这个问题，通常采用分数间隔均衡器，下面将介绍采样率为二倍符号率的线性SISO均衡算法。
+上面介绍的都是采用符号采样率的均衡器，这在多普勒比较严重的水声信道中容易产生相位翻转的现象。为了解决这个问题，通常采用分数间隔均衡器，下面将介绍采样率为二倍符号率的线性SISO均衡算法。
 
 当接收信号采用二倍符号速率采样时，接收符号可以改写为：
 \begin{eqnarray}
@@ -871,7 +876,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 \end{eqnarray}
 有了以上的改写，接收符号序列为：
 \begin{eqnarray}
-    \mathbf{z}_n=\mathbf{H}_n\mathbf{x}_n+\boldsymbol{\omega}
+    \mathbf{z}_n=\mathbf{H}_n\mathbf{x}_n+\boldsymbol{\omega}_n
     \label{equ:3.42}
 \end{eqnarray}
 
@@ -929,17 +934,17 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
     \end{array}
     \label{equ:3.45}
 \end{eqnarray}
-此算法与上文中的符号间隔更新算法是一致的，当利用式\ref{equ:3.45}求解出$\mathbf{U}_n$之后，就可以用同样的方法求解$\mathbf{f}_n$和${\mathbf{f}}'_n$。
+此算法与上文中的符号间隔更新算法是一致的，当利用式(\ref{equ:3.45})求解出$\mathbf{U}_n$之后，就可以用同样的方法求解$\mathbf{f}_n$和${\mathbf{f}}'_n$。
 
 需要说明一下，本文在仿真的时候并没有实现分数间隔MMSE均衡算法，而是在湖试数据处理部分直接应用此算法。
 \section{Turbo均衡与Turbo联合迭代}
 从上面的仿真分析可以看出，不论采用何种均衡算法(MAP,MMSE-optimal,MMSE-LC)都不能达到AWGN信道下的性能。而上文中的仿真采用的是卷积码，因此为了获得更好的均衡性能，可以采用纠错性能极好的Turbo码来代替卷积码。
 
-当turbo均衡中引用turbo码作为系统的差错控制编码时，发送端需要两个交织器，一个交织器是用于两个分量编码器之间，另一个交织器是用于编码器与符号映射器/信道之间。在接收端，不考虑软迭代信道估计算法，总共有两处迭代回路，一处是两个SISO分量译码器之间的迭代，一处是SISO译码器与SISO均衡器的迭代。具体可以参考\ncite{Raphaeli1997,xiang2003,Yeap2002,Hanzo2002,Yang2007,Yang2005}。
+当Turbo均衡中引用turbo码作为系统的差错控制编码时，发送端需要两个交织器，一个交织器是用于两个分量编码器之间，另一个交织器是用于编码器与符号映射器/信道之间。在接收端，不考虑软迭代信道估计算法，总共有两处迭代回路，一处是两个SISO分量译码器之间的迭代，一处是SISO译码器与SISO均衡器的迭代。具体可以参考\ncite{Raphaeli1997,xiang2003,Yeap2002,Hanzo2002}。
 
 传统的结合Turbo码的Turbo均衡算法是在一次均衡迭代之中，Turbo码本身进行了多次迭代，但文献\ncite{FonsecadosSantos2007}中提出一种新的关于均衡与译码之间迭代调度算法。在每一次均衡迭代中，只和Turbo译码器中的一个分量译码器进行迭代，而分量译码器之间交互信息是通过均衡器的迭代，相当于传统的算法是均衡器迭代为外部迭代，而译码器迭代为内部迭代，而文献\ncite{FonsecadosSantos2007}中将译码器迭代作为外部迭代而均衡器迭代作为内部迭代。此算法的优点是降低了复杂度。
 \section{采用预编码的线性SISO均衡算法}
-在前面介绍的迭代均衡和译码的主要思想是在均衡器和译码器之间通过传递软信息以迭代的方式进行联合译码检测。如果把卷积码和ISI信道看作是一个串行级联的卷积码(SCCC)\cite{Benedetto1998}，则卷积码就是外码，而把ISI信道看做是内码。在文\ncite{Benedetto1998}中显示，对于串行级联码仅作为内码是递归卷积码，级联码才有交织增益，而ISI信道是典型的有限脉冲响应(FIR)等效于一个非递归的卷积码，因此，不会获得交织增益，只能通过提高外码编码器的性能改善。
+在前面介绍的迭代均衡和译码的主要思想是在均衡器和译码器之间通过传递软信息以迭代的方式进行联合译码检测。如果把卷积码和ISI信道看作是一个串行级联的卷积码(SCCC)\cite{Benedetto1998}，则卷积码就是外码，而把ISI信道看做是内码。在文献\ncite{Benedetto1998}中显示，对于串行级联码仅作为内码是递归卷积码，级联码才有交织增益，而ISI信道是典型的有限脉冲响应(FIR)等效于一个非递归的卷积码，因此，不会获得交织增益，只能通过提高外码编码器的性能改善。
 
 在本节研究通过采用二进制预编码技术，可以使得信道“表现”出递归特性，获得良好的交织增益。作为外码的卷积码编码器就可以使用小的约束长度实现高的编码增益，同时也降低了译码复杂度(与卷积码约束长度相关)。
 

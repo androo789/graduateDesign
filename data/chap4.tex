@@ -13,7 +13,7 @@
 
 文中仿真分析部分给出基于时变横向滤波和相位旋转信道模型的软迭代信道估计与硬迭代信道估计的性能比较，同时，也给出了与传统无线电通信中的不带相位估计器的软迭代信道估计算法的性能比较，从仿真结果来看，本文提出的软迭代信道估计算法明显优于同等条件下的其他两种信道估计算法。
 
-文中海试数据处理部分，均衡算法采用基于先验信息MMSE准则的线性Turbo均衡算法，而信道估计采用基于时变横向滤波和相位旋转信道模型的软迭代信道估计。最后的均衡效果进一步验证了本文提出的软迭代信道估计算法很好地适用于水声Turbo均衡中。
+本章中海试数据处理部分，均衡算法采用基于先验信息MMSE准则的线性Turbo均衡算法，而信道估计采用基于时变横向滤波和相位旋转信道模型的软迭代信道估计。最后的均衡效果进一步验证了本文提出的软迭代信道估计算法很好地适用于水声Turbo均衡中。
 \section{系统模型}
 依然定义发送符号为：
 \begin{eqnarray}
@@ -27,7 +27,7 @@
 \end{eqnarray}
 其中，$\omega_n$是均值为零方差为$\mathrm{E}(\omega_n,\omega_n^*)$的复高斯过程。
 
-在图\ref{fig:2.4}的接收机中，软迭代信道估计器的输入时上一次迭代译码器反馈的关于$c_n$的软信息。这个软信息通常用对数似然比(LLRs)表示$L_e^D(c_{n,j})=\ln[P(c_n=+1)/P(c_n=-1)]$。为了专注于研究软迭代信道估计算法以及以后的仿真简单，简化模型如图\ref{fig:4.1}。
+在图\ref{fig:2.4}的接收机中，软迭代信道估计器的输入是上一次迭代译码器反馈的关于$c_n$的软信息。这个软信息通常用对数似然比(LLRs)表示$L_e^{\mathrm{D}}(c_{n,j})=\ln[P(c_n=+1)/P(c_n=-1)]$。为了专注于研究软迭代信道估计算法以及以后的仿真简单，简化模型如图\ref{fig:4.1}。
 \begin{figure}[htb]
   \begin{center}
     \includegraphics[width=0.8\textwidth]{images/channel.pdf}
@@ -43,15 +43,15 @@
   \caption{互信息与$\sigma_L$的关系图}
   \label{fig:4.2}
 \end{figure}
-如图\ref{fig:4.2}，当$\sigma_L=0$时，译码器反馈的软信息$L_e^D(c_{n,j})=0$，非常差，因为基本不提供任何的可靠性，而随着$\sigma_L$的增大，译码器反馈的软信息越来越可靠。
+如图\ref{fig:4.2}，当$\sigma_L=0$时，译码器反馈的软信息$L_e^{\mathrm{D}}(c_{n,j})=0$，非常差，因为基本不提供任何的可靠性，而随着$\sigma_L$的增大，译码器反馈的软信息越来越可靠。
 
-根据式(\ref{equ:3.7})-(\ref{equ:3.9})，利用译码器反馈的关于比特的$L_e^D(c_{n,j})$，可以得到每个符号的$y_{{n}'}$的均值$\bar{y_{{n}'}}$和方差$\upsilon_{y_{{n}'}}=\mathrm{E}(y_{{n}'}y_{{n}'}^*)$。利用统计量$\bar{y}_{{n}'}$和$\upsilon_{y_{{n}'}}$，发送符号$x_n$可以表示为：
+根据式(\ref{equ:3.7})-(\ref{equ:3.9})，利用译码器反馈的关于比特的$L_e^{\mathrm{D}}(c_{n,j})$，可以得到每个符号的$y_{{n}'}$的均值$\bar{y_{{n}'}}$和方差$\upsilon_{y_{{n}'}}=\mathrm{E}(y_{{n}'}y_{{n}'}^*)$。利用统计量$\bar{y}_{{n}'}$和$\upsilon_{y_{{n}'}}$，发送符号$x_n$可以表示为：
 \begin{eqnarray}
     x_n=\bar{x}_n+\chi_n
     \label{equ:4.3}
 \end{eqnarray}
 其中$\chi_n$为均值为零方差为$\mathrm{E}(\chi_n\chi_n^*)=\upsilon_n$的离散噪声。当传输的是数据符号时，可知，$\bar{x}=\bar{y}_{{n}'}$和$\upsilon_n=\upsilon_{y_{{n}'}}$。当传输的是训练序列的时候，$\bar{x}_n=t_n$和$\upsilon_n=0$。假设当$k\neq
-n$的时候，$\mathrm{E}(\chi_n\chi_k^*)=0$(由于在turbo均衡中引入了交织器，因此上述假设是可以成立的)，那么利用译码器反馈的软信息$L_e^D(c_{n,j})$得到的关于发送符号$x_n$协方差矩阵就是对角矩阵$\mathbf{V}_n=\mathrm{diag}[\upsilon_n,\cdots,\upsilon_{n-\mathrm{M}+1}]$。由式(\ref{equ:4.3})可知：
+n$的时候，$\mathrm{E}(\chi_n\chi_k^*)=0$(由于在Turbo均衡中引入了交织器，因此上述假设是可以成立的)，那么利用译码器反馈的软信息$L_e^{\mathrm{D}}(c_{n,j})$得到的关于发送符号$x_n$协方差矩阵就是对角矩阵$\mathbf{V}_n=\mathrm{diag}[\upsilon_n,\cdots,\upsilon_{n-\mathrm{M}+1}]$。由式(\ref{equ:4.3})可知：
 \begin{eqnarray}
     \mathrm{E}(\boldsymbol{\chi}_n\boldsymbol{\chi}_n^{\mathrm{H}})=\mathbf{V}_n
     \label{equ:4.4}
@@ -212,7 +212,7 @@ LMS算法中一般采用最陡下降法来减少计算量，而FOLMS本质上是
     \hat{\sigma}_{e,n}^2\approx\sigma_{e,n}^2=\mathrm{E}(e_ne_n^*)
     \label{equ:4.24}
 \end{eqnarray}
-如果发送符号$x_n$都是已知的，那么此时就可以很容易的得到方差$\hat{\sigma}_{e,n}^2$，但是在软迭代信道估计算法中，已知的只有关于发送符号的先验均值$\bar{x_n}$和方差$\upsilon_n$，因此信道模型可以改写如下：
+如果发送符号$x_n$都是已知的，那么此时就可以很容易的得到方差$\hat{\sigma}_{e,n}^2$，但是在软迭代信道估计算法中，已知的只有关于发送符号的先验均值$\bar{x}_n$和方差$\upsilon_n$，因此信道模型可以改写如下：
 \begin{eqnarray}
     z_n=\hat{\mathbf{h}}_{n-1}^{\mathrm{T}}\bar{\mathbf{x}}_n+d_n
     \label{equ:4.25}
@@ -238,7 +238,7 @@ LMS算法中一般采用最陡下降法来减少计算量，而FOLMS本质上是
         \mathbf{0}_{\mathrm{M}}$)时：
         \begin{eqnarray}
             \begin{array}{l@{\;=\;}l}
-                \hat{\sigma}_{\mathrm{new}}^2&\mu_{n}(d_nd_n^*-\hat{\mathbf{h}}^{\mathrm{T}}_{n-1}\exp{\imath\hat{\psi}_{n-1}}\mathbf{V}_n\hat{\mathbf{h}}_{n-1}^*\exp{-\imath\hat{\psi}_{n-1}})+(1-\mu_{n})\hat{\sigma}_{e,n-1}^2\\
+                \hat{\sigma}_{\mathrm{new}}^2&\mu_{n}(d_nd_n^*-\hat{\mathbf{h}}^{\mathrm{T}}_{n-1}e^{\imath\hat{\psi}_{n-1}}\mathbf{V}_n\hat{\mathbf{h}}_{n-1}^*e{-\imath\hat{\psi}_{n-1}})+(1-\mu_{n})\hat{\sigma}_{e,n-1}^2\\
                 \hat{\sigma}_{e,n}^2&\max(\hat{\sigma}_{\mathrm{new}}^2,\hat{\sigma}_{\mathrm{low}}^2)
             \end{array}
             \label{equ:4.28}
