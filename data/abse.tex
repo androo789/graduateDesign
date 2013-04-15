@@ -7,43 +7,37 @@
 \thispagestyle{plainabstracte}
 \vspace{1em}
 
-In the low signal to noise ratio of acoustic communication system,
-   convolutional code and RS code are adopted to improve the reliability of
-   information transmission.For convolutional code, using sequential
-   decoding method to simplify the decoding algorithm and to improve the
-   efficiency. The fano algorithm is one of the sequential decoding methods
-   which is small space spending, relatively simple to achieve and used
-   widely in reality. So, finally taking it as the decoding algorithm. For RS code, BM algorithm is almost the most widely one among all decding algorithms.
+As sound waves can be spread very far away in underwater acoustic condition, it
+becomes the principal means of underwater wireless information transmission. As
+human activities become more frequent in the ocean, the requirement to transmit
+underwater information is also more and more, the application of underwater
+acoustic communication technology is becoming more and more widely. Now and in
+the future, in the field of scientific research, Marine construction, ocean
+mineral resources research\&development and military fields, etc., underwater acoustic communication technology has a wide range of applications. These applications also require higher rate and more reliability of the underwater acoustic communication.
 
-Determining the coding parameters by matlab simulation and test decoding
-efficiency in PC/104.
+In the modern underwater acoustic communication system, to overcome intersymbol interference produced by multipath effect is the main task for underwater acoustic channel. While the main methods to overcome the multipath effect and reduce intersymbol interference include space diversity technology and equalization technology.
 
-Through test data, several conclusions can be obtained. With sequential
-decoding algorithm, the error of convolutional code which constraint length is
-24 can be very good to meet the requirements and be consistent with the
-theory of the book, also the running time is with delay. Therefore, the
-system needs to a buffer to store the decoding data; The $RS(15,9,7)$with BM decoding algorithm, the error rate has been greatly improved and the running time is very short. So the system does not need to buffer the decoding data.
+Based on high speed data transmission of intersymbol interference suppression problem in underwater acoustic channel, turbo equalization technique and the soft iterative channel estimation algorithm is studied in this paper. The linear turbo equalization of minimum mean squared error(MMSE) equalization using a priori information(MMSE-LE) can make use of soft information feedback by decoder, estimate transmission symbols and map the soft information about transmission symbols. SISO decoder takes this soft information as input and produces soft extrinsic information for equalization. The equalizer's performance will be improved as iterating.
 
-In the low signal to noise ratio of acoustic communication system,
-   convolutional code and RS code are adopted to improve the reliability of
-   information transmission.For convolutional code, using sequential
-   decoding method to simplify the decoding algorithm and to improve the
-   efficiency. The fano algorithm is one of the sequential decoding methods
-   which is small space spending, relatively simple to achieve and used
-   widely in reality. So, finally taking it as the decoding algorithm. For RS code, BM algorithm is almost the most widely one among all decding algorithms.
+Due to MMSE-LE requires channel information, to improve equalizer's performance, this paper proposed soft iterative channel estimation algorithm according to the characteristics of underwater acoustic channel. This algorithm applies soft fast self-optimized LMS to estimate transverse filter coefficients and second order phase-locked loop to estimate phase while through iterating to improve estimated performance.
 
-Determining the coding parameters by matlab simulation and test decoding
-efficiency in PC/104.
+Through theoretical analysis and computer simulation, this paper researches the performance of MMSE-LE and soft iterative channel estimation algorithm. In addition, the proposed algorithms are applied to process data obtained by ocean and lake experiments, and the processing result verifies that MMSE-LE and soft iterative channel estimation algorithm has the very good practical value.
 
-Through test data, several conclusions can be obtained. With sequential
-decoding algorithm, the error of convolutional code which constraint length is
-24 can be very good to meet the requirements and be consistent with the
-theory of the book, also the running time is with delay. Therefore, the
-system needs to a buffer to store the decoding data; The $RS(15,9,7)$with BM decoding algorithm, the error rate has been greatly improved and the running time is very short. So the system does not need to buffer the decoding data.
+In this paper, the main research work is as follows:
+\begin{enumerate}
+  \item
+      Propose a algorithm about combining MMSE-LE with T-TCM, and apply the
+      algorithm to process data obtained by Ocean\&Lake experiment. This algorithm not only reduces system computation complexity, but also realizes the equalizer performance boost.
+  \item
+      Propose a soft iterative channel estimation algorithm that is suitable for underwater acoustic turbo equalization. This algorithm applies soft fast self-optimized LMS to estimate transverse filter coefficients and second order phase-locked loop to estimate phase while through iterating to improve estimated performance. From the simulation analysis and experiment data processing result, its performance is much better than the hard iterative channel estimation algorithm and soft iterative channel estimation algorithm without phase estimator. 
+\end{enumerate}
+
 \vspace{1em}
 
 \thispagestyle{plainabstracte}
 \noindent\textbf{Keywords}
 
-Low SNR \quad Underwater acoustic communication \quad Convolutional code
-\quad RS code
+Underwater Acoustic Coherent Communication \quad Underwater Acoustic
+Channel \quad Fast Self-Optimized LMS(FOLMS) \quad Adaptive Equalization
+\quad Turbo Equalization \quad Second-order phase-locked loop \quad Bit
+Interleave \quad Time Reverse

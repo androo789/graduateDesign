@@ -3,7 +3,7 @@
 \thispagestyle{empty}
 %=========================================================================
 \section{MMSE均衡算法}
-如图\ref{fig:3.1}为水声相干通信系统的传输模型，包括发射部分，传输部分以及接收部分。在接收部分中又包含了均衡器、译码器以及信道估计器。本章的重点在于均衡算法，因此主要关注SISO均衡器。
+如图\ref{fig:2.4}为水声相干通信系统的传输模型，包括发射部分，传输部分以及接收部分。在接收部分中又包含了均衡器、译码器以及信道估计器。本章的重点在于均衡算法，因此主要关注SISO均衡器。
 
 现在把图\ref{fig:2.4}中的接收部分单独拿出来，并采用基于先验信息MMSE准则的线性Turbo均衡器(MMSE-LE)代替图\ref{fig:2.4}中的SISO均衡器。如图\ref{fig:3.1}
 
@@ -180,7 +180,7 @@ m$的情况下，$\mathrm{Cov}(x_n,x_m)=0$。所以协方差矩阵$\mathrm{Cov}(
     \hat{x}_n=\bar{x}_n+\upsilon_n\cdot\mathbf{f}_n^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n)
     \label{equ:3.13}
 \end{eqnarray}
-然而，$\hat{x}_n$通过$\bar{x}_n$和$\upsilon_n$依赖$L_e^{\mathrm{D}}(c_{n,j})$，这违背了求解外部信息时不能依赖先验信息的原则。为了使$\hat{x}_n$独立于$L_e^{\mathrm{D}}(c_{n,j})$，在计算$\hat{x}_n$的时候，将$L_e^{\mathrm{D}}(c_{n,j}),\,j=1,\cdots,Q$都设置为$0$，从而$\bar{x}_n=0$且$\upsilon_n=1$。式\ref{equ:3.13}可以改写如下：
+然而，$\hat{x}_n$通过$\bar{x}_n$和$\upsilon_n$依赖$L_e^{\mathrm{D}}(c_{n,j})$，这违背了求解外部信息时不能依赖先验信息的原则。为了使$\hat{x}_n$独立于$L_e^{\mathrm{D}}(c_{n,j})$，在计算$\hat{x}_n$的时候，将$L_e^{\mathrm{D}}(c_{n,j}),\,j=1,\cdots,Q$都设置为$0$，从而$\bar{x}_n=0$且$\upsilon_n=1$。式(\ref{equ:3.13})可以改写如下：
 \begin{eqnarray}
     \begin{array}{c}
     {\mathbf{f}}'_n\overset{\Delta}{=}\mathbf{f}_n|_{\upsilon_n=1}=(\boldsymbol{\Sigma}_n+(1-\upsilon_n)\mathbf{s}_n\mathbf{s}_n^{\mathrm{H}})^{-1}\mathbf{s}_n\\
@@ -940,7 +940,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 \section{Turbo均衡与Turbo联合迭代}
 从上面的仿真分析可以看出，不论采用何种均衡算法(MAP,MMSE-optimal,MMSE-LC)都不能达到AWGN信道下的性能。而上文中的仿真采用的是卷积码，因此为了获得更好的均衡性能，可以采用纠错性能极好的Turbo码来代替卷积码。
 
-当Turbo均衡中引用turbo码作为系统的差错控制编码时，发送端需要两个交织器，一个交织器是用于两个分量编码器之间，另一个交织器是用于编码器与符号映射器/信道之间。在接收端，不考虑软迭代信道估计算法，总共有两处迭代回路，一处是两个SISO分量译码器之间的迭代，一处是SISO译码器与SISO均衡器的迭代。具体可以参考\ncite{Raphaeli1997,xiang2003,Yeap2002,Hanzo2002}。
+当Turbo均衡中引用turbo码作为系统的差错控制编码时，发送端需要两个交织器，一个交织器是用于两个分量编码器之间，另一个交织器是用于编码器与符号映射器/信道之间。在接收端，不考虑软迭代信道估计算法，总共有两处迭代回路，一处是两个SISO分量译码器之间的迭代，一处是SISO译码器与SISO均衡器的迭代。具体可以参考\ncite{Raphaeli1997,Xiang2003,Yeap2002,Hanzo2002,Yang2005,Yang2007}。
 
 传统的结合Turbo码的Turbo均衡算法是在一次均衡迭代之中，Turbo码本身进行了多次迭代，但文献\ncite{FonsecadosSantos2007}中提出一种新的关于均衡与译码之间迭代调度算法。在每一次均衡迭代中，只和Turbo译码器中的一个分量译码器进行迭代，而分量译码器之间交互信息是通过均衡器的迭代，相当于传统的算法是均衡器迭代为外部迭代，而译码器迭代为内部迭代，而文献\ncite{FonsecadosSantos2007}中将译码器迭代作为外部迭代而均衡器迭代作为内部迭代。此算法的优点是降低了复杂度。
 \section{采用预编码的线性SISO均衡算法}
