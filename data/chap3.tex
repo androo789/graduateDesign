@@ -571,7 +571,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    \hline
     &ch\_none&无码间干扰\\
     \cline{2-3}
-   \raisebox{2.3ex}[0pt]{信道类型}&CHA&$[0.407\; 0.815\; 0.407]$\\
+   \raisebox{2.3ex}[0pt]{信道类型}&CHC&$[0.227\; 0.460\; 0.688\;0.460\;0.227]$\\
    \hline
     &\textbf{eq\_map\_det}&\textbf{MAP均衡算法}\\
    \cline{2-3}
@@ -579,7 +579,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    \cline{2-3}
    &\textbf{eq\_approx\_lin}&\textbf{MMSE近似线性均衡器}\\
    \hline
-   调制方式&mo\_bpsk&BPSK\\
+   调制方式&mo\_qpsk&QPSK\\
    \hline
    交织长度&bl\_1024&1024\\
    \hline
@@ -593,7 +593,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 参数如表\ref{tab:3.6}，仿真结果如图\ref{fig:3.3}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_equalizers_separate_bw.pdf}
+    \includegraphics[width=\textwidth]{images/different_equalizers_separate.pdf}
   \end{center}
   \caption{不同均衡算法的性能比较}
   \label{fig:3.3}
@@ -627,7 +627,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
     \hline
     &ch\_none&无码间干扰\\
     \cline{2-3}
-   \raisebox{2.3ex}[0pt]{信道类型}&CHA&$[0.407 \;0.815\; 0.407]$\\
+   \raisebox{2.3ex}[0pt]{信道类型}&CHC&$[0.227 \;0.460\; 0.688\;0.460\;0.227]$\\
    \hline
    均衡类型&eq\_exact\_lin&MMSE精确线性均衡算法\\
    \hline
@@ -649,7 +649,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 参数如表\ref{tab:3.7}，仿真结果如图\ref{fig:3.4}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_mod_separate_bw.pdf}
+    \includegraphics[width=\textwidth]{images/different_mod_separate.pdf}
   \end{center}
   \caption{不同调制方式下均衡性能的比较}
   \label{fig:3.4}
@@ -683,11 +683,11 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    \hline
     &ch\_none&无码间干扰\\
     \cline{2-3}
-   \raisebox{2.3ex}[0pt]{信道类型}&CHA&$[0.407\; 0.815\; 0.407]$\\
+   \raisebox{2.3ex}[0pt]{信道类型}&CHC&$[0.227\; 0.460\; 0.688\;0.460\;0.227]$\\
    \hline
    均衡类型&eq\_exact\_lin&MMSE精确线性均衡算法\\
    \hline
-   调制方式&mo\_bpsk&BPSK\\
+   调制方式&mo\_qpsk&QPSK\\
    \hline
    交织长度&bl\_1024&1024\\
    \hline
@@ -704,7 +704,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 参数如表\ref{tab:3.8}，仿真结果如图\ref{fig:3.5}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_code_separate_bw.pdf}
+    \includegraphics[width=\textwidth]{images/different_code_separate.pdf}
   \end{center}
   \caption{不同调制方式下均衡性能的比较}
   \label{fig:3.5}
@@ -738,11 +738,11 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    \hline
     &ch\_none&无码间干扰\\
     \cline{2-3}
-   \raisebox{2.3ex}[0pt]{信道类型}&CHA&$[0.407\; 0.815\; 0.407]$\\
+   \raisebox{2.3ex}[0pt]{信道类型}&CHC&$[0.227\; 0.460\; 0.688\;0.460\;0.227]$\\
    \hline
    均衡类型&eq\_exact\_lin&MMSE精确线性均衡算法\\
    \hline
-   调制方式&mo\_bpsk&BPSK\\
+   调制方式&mo\_qpsk&QPSK\\
    \hline
    交织长度&bl\_1024&1024\\
    \hline
@@ -758,7 +758,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 参数如表\ref{tab:3.9}，仿真结果如图\ref{fig:3.6}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_puncture_separate_bw.pdf}
+    \includegraphics[width=\textwidth]{images/different_puncture_separate.pdf}
   \end{center}
   \caption{不同删余方式下均衡性能的比较}
   \label{fig:3.6}
@@ -792,11 +792,11 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
    \hline
     &ch\_none&无码间干扰\\
     \cline{2-3}
-   \raisebox{2.3ex}[0pt]{信道类型}&CHA&$[0.407\; 0.815\; 0.407]$\\
+   \raisebox{2.3ex}[0pt]{信道类型}&CHC&$[0.227\; 0.460\; 0.688\;0.460\;0.227]$\\
    \hline
    均衡类型&eq\_exact\_lin&MMSE精确线性均衡算法\\
    \hline
-   调制方式&mo\_bpsk&BPSK\\
+   调制方式&mo\_qpsk&QPSK\\
    \hline
    &\textbf{bl\_1024}&\textbf{1024}\\
    \cline{2-3}
@@ -812,7 +812,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 参数如表\ref{tab:3.10}，仿真结果如图\ref{fig:3.7}。
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=\textwidth]{images/different_block_length_separate_bw.pdf}
+    \includegraphics[width=\textwidth]{images/different_block_length_separate.pdf}
   \end{center}
   \caption{不同调制方式下均衡性能的比较}
   \label{fig:3.7}
