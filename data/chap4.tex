@@ -343,9 +343,9 @@ LMS算法中一般采用最陡下降法来减少计算量，而FOLMS本质上是
   \begin{threeparttable}
   \begin{tabular}{cccc}
     \hline
-    编码方式&调制方式&均衡算法&信道估计与相位估计算法\\
+    编码方式&调制方式&均衡算法&\tabincell{c}{信道估计与\\相位估计算法}\\
     \hline
-    Turbo&QPSK&\tabincell{c}{基于先验信息MMSE的线性均衡\\(N=20)}&\tabincell{c}{软迭代FOLMS+二阶锁相环\\(M=20)}\\
+    Turbo&QPSK&\tabincell{c}{基于先验信息MMSE\\的线性均衡(N=20)}&\tabincell{c}{软迭代FOLMS和\\二阶锁相环(M=20)}\\
     \hline
   \end{tabular}
 \end{threeparttable}
@@ -378,22 +378,28 @@ LMS算法中一般采用最陡下降法来减少计算量，而FOLMS本质上是
     \label{fig:4.8}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \subfigure[接收信号星座图]{
-    \label{fig:4.9.a}\includegraphics[width=0.45\textwidth]{images/final_1.pdf}
-    }\;
-    \subfigure[迭代0次均衡器输出星座图]{
-    \label{fig:4.9.b}\includegraphics[width=0.45\textwidth]{images/final_2.pdf}
-    }\\
-    \subfigure[第1帧数据的估计相位]{
-    \label{fig:4.9.c}\includegraphics[width=0.5\textwidth]{images/final_3.pdf}
-    }
-    \caption{基于本文信道估计与相位估计算法的MMSE-TE的均衡输出星座图比较}
-    \label{fig:4.9}
+%\begin{figure}
+%    \centering
+%    \subfigure[接收信号星座图]{
+%    \label{fig:4.9.a}\includegraphics[width=0.45\textwidth]{images/final_1.pdf}
+%    }\;
+%    \subfigure[迭代0次均衡器输出星座图]{
+%    \label{fig:4.9.b}\includegraphics[width=0.45\textwidth]{images/final_2.pdf}
+%    }\\
+%    \subfigure[第1帧数据的估计相位]{
+%    \label{fig:4.9.c}\includegraphics[width=0.5\textwidth]{images/final_3.pdf}
+%    }
+%    \caption{基于本文信道估计与相位估计算法的MMSE-TE的均衡输出星座图比较}
+%    \label{fig:4.9}
+%\end{figure}
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{images/softInfo.pdf}
+  \end{center}
+  \caption{均衡器输出软信息分布图}
+  \label{fig:4.9}
 \end{figure}
-
-通过图\ref{fig:4.9}(a)，图\ref{fig:4.9.b}以及图\ref{fig:4.9}(c)的基于本文信道估计与相位估计算法的MMSE-TE的均衡输出星座图比较可以看出，随着迭代次数的增加，均衡器的性能越好，当迭代一次时，均衡器输出信息经过Turbo译码器可以实现无差错译码。
+通过图\ref{fig:4.9}(a)，图\ref{fig:4.9}，图\ref{fig:4.9}(c)以及图\ref{fig:4.9}(d)的基于本文信道估计与相位估计算法的MMSE-TE的均衡输出软信息分布图比较可以看出，随着迭代次数的增加，均衡器输出的软信息越来越分开，均衡器的性能越来越好。当迭代一次时，均衡器输出信息经过Turbo译码器可以实现无差错译码。
 %==========================================================================
 \section{本章小结}
 针对水声通信信道相位时变的特性，本文在文献\ncite{Otnes2004}的基础上提出一种Turbo均衡中的软迭代信道估计算法。该算法采用软迭代快速自优化LMS跟踪和更新信道冲激响应，以及二阶锁相环跟踪和估计相位变化，软迭代信道估计算法相比于本文介绍的其他算法，在不增加运算量的前提下，改善了信道估计的收敛速度并提供良好的相位估计能力。由仿真结果可知，本文提出的软迭代信道估计算法的信道估计与相位估计的性能明显优于硬迭代信道估计与相位估计联合算法，在相位估计方面，本文提出的软迭代信道估计算法的性能远远优于不带相位估计器的软迭代信道估计算法。从海试数据处理中可以看出，本文提出的算法能够为Turbo均衡器提供可靠地时变横向滤波器系数矢量、各个符号处的相位以及信道方差，从而大大提高Turbo均衡器的性能。

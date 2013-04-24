@@ -34,16 +34,6 @@
   \caption{QPSK符号映射星座图}
   \label{fig:6.1}
 \end{figure}
-\subsection{系统结构}
-用于湖试的水声相干通信系统硬件框图如图\ref{fig:6.2}所示，
-\begin{figure}[htb]
-  \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/block.pdf}
-  \end{center}
-  \caption{水声相干通信系统的结构框图}
-  \label{fig:6.2}
-\end{figure}
-从图中可以看出，系统利用实验室研发的水声相干通信机进行数据的发射和接收，数据的生成和处理由PC机完成。
 \subsection{试验布置}
 试验的布置图见图\ref{fig:6.3}。试验使用新安江实验场的“实验1号”船作为接收母船（图\ref{fig:6.3}左上角），整个接收母船固定在距岸边$150$米左右的位置，水深$51$米。吊放换能器阵从接收母船的甲板吊放到水中，换能器阵上端距水面$10$米，下端距水面$21$米。
 拖轮拖带“实验2号”船作为移动发射船（图\ref{fig:6.3}右上角），发射换能器拖曳在$5\textasciitilde10$米深度。在试验过程中移动发射船在距离接收母船$1000$米到$2600$米的范围内沿不同路线、以不同航速运动，发射不同类型的信号，来测试水声通信机的性能。
@@ -126,10 +116,18 @@
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/result_1_1.pdf}
+    \includegraphics[width=0.7\textwidth]{images/result_1_1_s.pdf}
   \end{center}
   \caption{1052米处第一组数据包第一帧数据处理结果}
   \label{fig:6.9}
+\end{figure}
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/softInfo_1_1.pdf}
+  \end{center}
+  \caption{1052米处第一组数据包第一帧数据均衡器输出软信息分布图}
+  \label{fig:6.9s}
 \end{figure}
 
 \textbf{\sihao 2012年12月15日09:15:41数据 第二组} 
@@ -142,10 +140,18 @@
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/result_1_2.pdf}
+    \includegraphics[width=0.7\textwidth]{images/result_1_2_s.pdf}
   \end{center}
   \caption{1052米处第二组数据包第一帧数据处理结果}
   \label{fig:6.10}
+\end{figure}
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/softInfo_1_2.pdf}
+  \end{center}
+  \caption{1052米处第二组数据包第一帧数据均衡器输出软信息分布图}
+  \label{fig:6.10s}
 \end{figure}
 
 \textbf{\sihao 2012年12月15日10:06:18数据 第一组} 
@@ -158,10 +164,18 @@
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/result_2_1.pdf}
+    \includegraphics[width=0.7\textwidth]{images/result_2_1_s.pdf}
   \end{center}
   \caption{2617米处第一组数据包第一帧数据处理结果}
   \label{fig:6.11}
+\end{figure}
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/softInfo_2_1.pdf}
+  \end{center}
+  \caption{2617米处第一组数据包第一帧数据均衡器输出软信息分布图}
+  \label{fig:6.11s}
 \end{figure}
 
 \textbf{\sihao 2012年12月15日10:06:18数据 第二组} 
@@ -174,36 +188,57 @@
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/result_2_2.pdf}
+    \includegraphics[width=0.7\textwidth]{images/result_2_2_s.pdf}
   \end{center}
   \caption{2617米处第二组数据包第一帧数据处理结果}
   \label{fig:6.12}
 \end{figure}
 
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/softInfo_2_2.pdf}
+  \end{center}
+  \caption{2617米处第二组数据包第一帧数据均衡器输出软信息分布图}
+  \label{fig:6.12s}
+\end{figure}
 \textbf{\sihao 2012年12月15日11:09:57数据 第一组} 
 
 如图\ref{fig:6.13}为位置三(1763m)处第一组第一帧数据的信道冲激响应和误码率曲线图，图\ref{fig:6.13}(a)的信道冲激响应特性比位置一处要好，但是差于位置二处，因此，为了实现无差错译码，本组数据需要的均衡器长度为26，信道估计器长度为25，且需要均衡器迭代三次，译码器迭代一次。
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/result_3_1.pdf}
+    \includegraphics[width=0.7\textwidth]{images/result_3_1_s.pdf}
   \end{center}
   \caption{1736米处第一组数据包第一帧数据处理结果}
   \label{fig:6.13}
 \end{figure}
 
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/softInfo_3_1.pdf}
+  \end{center}
+  \caption{1736米处第一组数据包第一帧数据均衡器输出软信息分布图}
+  \label{fig:6.13s}
+\end{figure}
 \textbf{\sihao 2012年12月15日11:09:57数据 第二组} 
 
 如图\ref{fig:6.14}为位置三(1763m)处第二组第一帧数据的信道冲激响应和误码率曲线图，图\ref{fig:6.14}(a)中的信道冲激响应的多径长度要大于图\ref{fig:6.13}(a)，因此，为了实现无差错译码，本组数据需要的均衡器长度为35，信道估计器长度为32，且需要均衡器迭代三次，译码器迭代一次。这两组数据进一步验证位置一和位置二两组数据得出的结论，也即是：信道冲激响应的多径长度是影响均衡器性能的主要因素。
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/result_3_2.pdf}
+    \includegraphics[width=0.7\textwidth]{images/result_3_2_s.pdf}
   \end{center}
   \caption{1736米处第二组数据包第一帧数据处理结果}
   \label{fig:6.14}
 \end{figure}
 
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/softInfo_3_2.pdf}
+  \end{center}
+  \caption{1736米处第二组数据包第一帧数据均衡器输出软信息分布图}
+  \label{fig:6.14s}
+\end{figure}
 \textbf{\sihao 2012年12月15日11:14:50数据 第一组} 
 
 如图\ref{fig:6.15}为位置四(1645m)处第一组第一帧数据的信道冲激响应和误码率曲线图，图\ref{fig:6.15}(a)中的信道冲激响应比位置三处差，从各个位置处发送数据的环境分析，此时风浪较大，且船并没有抛锚固定而是随着风浪而运动，因此导致信道冲激响应较差。
@@ -212,10 +247,18 @@
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/result_4_1.pdf}
+    \includegraphics[width=0.7\textwidth]{images/result_4_1_s.pdf}
   \end{center}
   \caption{1645米处第一组数据包第一帧数据处理结果}
   \label{fig:6.15}
+\end{figure}
+
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/softInfo_4_1.pdf}
+  \end{center}
+  \caption{1645米处第一组数据包第一帧数据均衡器输出软信息分布图}
+  \label{fig:6.15s}
 \end{figure}
 
 \textbf{\sihao 2012年12月15日11:14:50数据 第二组} 
@@ -224,12 +267,19 @@
 
 \begin{figure}[htb]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/result_4_2.pdf}
+    \includegraphics[width=0.7\textwidth]{images/result_4_2_s.pdf}
   \end{center}
   \caption{1645米处第二组数据包第一帧数据处理结果}
   \label{fig:6.16}
 \end{figure}
 
+\begin{figure}[htb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{images/softInfo_4_2.pdf}
+  \end{center}
+  \caption{1645米处第二组数据包第一帧数据均衡器输出软信息分布图}
+  \label{fig:6.16s}
+\end{figure}
 虽然本文提出的基于先验信息MMSE准则的线性Turbo均衡算法能够无差错译码几乎所有位置所有组的所有帧数据，但是除了位置二处外，其他位置都要求均衡器和信道估计器的长度过长，从而引起运算复杂度过高，不能实现实时数据传输。
 \section{本章小结}
 本章首先介绍了湖试的试验环境及试验布置情况，而后对湖试地点的水声信道特性进行了分析，包括声速梯度和信道冲激响应。

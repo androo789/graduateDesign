@@ -368,106 +368,7 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
 
 此时，可以利用$\mathbf{U}_{\mathrm{N}}$，$\mathbf{u}_{\mathrm{N}}$和$u_{\mathrm{N}}$计算出$\mathbf{U}_n$，从而形成完整的递归算法。当$\mathbf{f}_{n+1}=\boldsymbol{\Sigma}_{n+1}^{-1}\mathbf{s}_{n+1}$得到之后，就可以利用式(\ref{equ:3.21})求解出外部信息$L_e^{\mathrm{E}}(c_{n+1,j})$。
 
-为了利用这种时间递归算法，$\mathbf{U}_n$在$n=1$的初始化值$\mathbf{U}_1=(\sigma_{\omega}\mathbf{I}_{\mathrm{N}}+\mathbf{H}_1\mathbf{V}_1\mathbf{H}_1^{\mathrm{H}})^{-1}$需要给出。由于算法在训练序列的时候就开始递归计算，因此$\mathbf{V}_1=0$，从而得到$\mathbf{U}_1=\sigma_{\omega}^{-2}\mathbf{I}_{\mathrm{N}}$。算法步骤总结如表\ref{tab:3.4}
-\begin{longtable}{l}
-  \caption{MMSE-LE递归算法总结}
-  \label{tab:3.4}\\
-
-  \endfirsthead
-
-  \multicolumn{1}{c}{续表~\thetable\hskip1em MMSE-LE递归算法总结}
-
-  \endhead
-  
-  \hline
-  \multicolumn{1}{r}{续下页}
-  \endfoot
-  \endlastfoot
-    \hline
-    \begin{minipage}[tb]{15cm}
-        \textbf{\xiaosan 输入:}
-    \begin{itemize}
-        \item[-]  星座图映射$\mathcal{S}={\alpha_1,\cdots,\alpha_{2^Q}}$，
-        \item[-]  滤波器长度$N_1$和$N_2$，
-        \item[-]  信道特征$h_k,k=0,\cdots,M-1$和$\sigma_{\omega,n}^2$，
-        \item[-]  接收符号$z_n,n=1-N_2,\cdots,L+N_1$，
-        \item[-]
-            先验信息$L_e^{\mathrm{D}}(c_{n,j}),n=1-N_2+M+1,\cdots,L+N_1,j=1,\cdots,Q$，
-    \end{itemize}
-    \vspace{5mm}
-\end{minipage}\\
-    \hline
-    \begin{minipage}[tb]{15cm}
-        \textbf{\xiaosan 初始化：}
-    \begin{itemize}
-        \item[-]
-            定义变量$\mathbf{f}=\mathbf{0}_{\mathrm{N}},\tilde{\mathbf{U}}=\mathbf{0}_{N\times(N-1)},$
-            
-            $\mathbf{u}={\mathbf{u}}'=\mathbf{0}_{\mathrm{N}-1},x=u=\mu=\rho_i=0,i=1,\cdots,2^Q$，
-        \item[-]   计算$\bar{x}_n$和$\upsilon_n,n=1-N_2-M+1,\cdots,L+N_1$，
-        \item[-]   计算$\bar{z}_n,n=1-N_2,\cdots,L+N_1$，
-        \item[-]
-            计算$\tilde{\mathbf{U}}=(\sigma_{\omega,n}^2\mathbf{I}_{\mathrm{N}}+\mathbf{H}_1\mathbf{V}_1\mathbf{H}_1^{\mathrm{H}})^{-1}$，
-    \end{itemize}
-    \vspace{5mm}
-\end{minipage}\\
-    \hline
-    \begin{minipage}[tb]{15cm}
-        \textbf{\xiaosan 均衡算法：}
-
-     \quad FOR $n=1$ TO $L$ DO
-
-     \qquad $\mathbf{f}=\tilde{\mathbf{U}}\mathbf{s}$,
-     
-     \qquad $\mu=\mathbf{f}^{\mathrm{H}}\mathbf{s}$,
-
-     \qquad  $x=\mathbf{f}^{\mathrm{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n)+\bar{x}_n\mu$,
-
-     \quad FOR $i=1$ TO $2^Q$ DO
-
-     \qquad $\rho_i=|x-\alpha_i\mu|^2/(\mu-\mu^2)$,
-
-     \quad END
-
-     \quad FOR $j=1$ TO $Q$ DO
-
-     \qquad $ L_e^{\mathrm{E}}(c_{n,j})=\ln\frac{\displaystyle\sum_{\forall
-         \mathbf{s}_i:s_{i,j}=0}\exp\left(-\rho_{n,j}+\sum_{\forall
-         {j}':{j}'\neq j}\tilde{s}_{i,{j}'}L(c_{n,{j}'})/2\right
-         )}{\displaystyle\sum_{\forall
-         \mathbf{s}_i:s_{i,j}=1}\exp\left(-\rho_{n,j}+\sum_{\forall
-         {j}':{j}'\neq j}\tilde{s}_{i,{j}'}L(c_{n,{j}'})/2\right)}$
-         
-         \quad END
-
-     \quad IF $n<L$ THEN
-
-     \qquad
-     $\begin{bmatrix}\mathbf{U}&\mathbf{u}\\\mathbf{u}^{\mathrm{N}}&u\end{bmatrix}=\tilde{\mathbf{U}}$,
-
-     \qquad    $\mathbf{U}=\mathbf{U}-\mathbf{u}\mathbf{u}^{\mathrm{H}}/u$,
-
-     \qquad
-     $\begin{bmatrix}\mathbf{u}&u\end{bmatrix}=\begin{bmatrix}\mathbf{0}_{\mathrm{N}-1}\\\sigma_{\omega,n}^2\end{bmatrix}=\mathbf{H}_{n+1}\mathbf{V}_{n+1}\mathbf{H}_{n+1}^{\mathrm{H}}$,
-
-        \qquad ${\mathbf{u}}'=\mathbf{U}\mathbf{u}$,
-
-       \qquad  $u=1/(u-\mathbf{u}^{\mathrm{H}}{\mathbf{u}}')$,
-
-       \qquad  $\mathbf{u}=-u{\mathbf{u}}'$,
-
-       \qquad  $\mathbf{U}=\mathbf{U}+u{\mathbf{u}}'{\mathbf{u}}^{'H}$,
-
-       \qquad  $\tilde{\mathbf{U}}=\begin{bmatrix}u &
-             \mathbf{u}^{\mathrm{H}}\\\mathbf{u}& \mathbf{U}\end{bmatrix}$,
-
-        \quad     END
-
-         \quad    END
-     \vspace{5mm}
- \end{minipage}\\
-    \hline
-\end{longtable}
+为了利用这种时间递归算法，$\mathbf{U}_n$在$n=1$的初始化值$\mathbf{U}_1=(\sigma_{\omega}\mathbf{I}_{\mathrm{N}}+\mathbf{H}_1\mathbf{V}_1\mathbf{H}_1^{\mathrm{H}})^{-1}$需要给出。由于算法在训练序列的时候就开始递归计算，因此$\mathbf{V}_1=0$，从而得到$\mathbf{U}_1=\sigma_{\omega}^{-2}\mathbf{I}_{\mathrm{N}}$。
 \section{低复杂度近似算法}
 为了进一步减少计算量，寻找不随$n$变化的滤波器系数$\mathbf{f}\overset{\Delta}{=}[f_{N_2}^*,f_{N_2-1}^*,\cdots,f_{-N_1}^*]$，提出MMSE均衡算法的低复杂度近似解决方案来代替式(\ref{equ:3.13})获取$\hat{x}_n$。其中，利用$\boldsymbol{\Sigma}_n+(1-\upsilon_n)\mathbf{s}\mathbf{s}^{\mathrm{H}}$的时间平均值来代替变化值：
 \begin{eqnarray}
@@ -477,7 +378,8 @@ $\boldsymbol{\Sigma}_{n}$的子矩阵$\boldsymbol{\Sigma}_{\mathrm{P}}$的逆$\b
     \end{array}
     \label{equ:3.30}
 \end{eqnarray}
-其中$\bar{\mathbf{V}}\overset{\Delta}{=}\frac{1}{L}\sum_{n=1}^L\mathbf{V}_n$和$\bar{\upsilon}=\frac{1}{L}=\sum_{n=1}^L\upsilon_n$。发送符号估计值$\hat{x}_n$可以改写成：
+其中$\bar{\mathbf{V}}\overset{\Delta}{=}\frac{1}{L}\sum_{n=1}^\mathrm{L}\mathbf{V}_n$和$\bar{\upsilon}=\frac{1}{L}\cdot
+\sum_{n=1}^\mathrm{L}\upsilon_n$。发送符号估计值$\hat{x}_n$可以改写成：
 \begin{eqnarray}
     \hat{x}_n=\mathbf{f}^{'\mathbf{H}}(\mathbf{z}_n-\bar{\mathbf{z}}_n+\bar{x}_n\mathbf{s})
     \label{equ:3.31}
@@ -943,23 +845,7 @@ $L_e^E(c_{n,2})=\sqrt{8}\cdot\mu\mathrm{Im}(x)/(\sigma_{\omega,n}^2K_f+\mathbf{p
 当Turbo均衡中引用turbo码作为系统的差错控制编码时，发送端需要两个交织器，一个交织器是用于两个分量编码器之间，另一个交织器是用于编码器与符号映射器/信道之间。在接收端，不考虑软迭代信道估计算法，总共有两处迭代回路，一处是两个SISO分量译码器之间的迭代，一处是SISO译码器与SISO均衡器的迭代。具体可以参考\ncite{Raphaeli1997,Xiang2003,Yeap2002,Hanzo2002,Yang2005,Yang2007}。
 
 传统的结合Turbo码的Turbo均衡算法是在一次均衡迭代之中，Turbo码本身进行了多次迭代，但文献\ncite{FonsecadosSantos2007}中提出一种新的关于均衡与译码之间迭代调度算法。在每一次均衡迭代中，只和Turbo译码器中的一个分量译码器进行迭代，而分量译码器之间交互信息是通过均衡器的迭代，相当于传统的算法是均衡器迭代为外部迭代，而译码器迭代为内部迭代，而文献\ncite{FonsecadosSantos2007}中将译码器迭代作为外部迭代而均衡器迭代作为内部迭代。此算法的优点是降低了复杂度。
-\section{采用预编码的线性SISO均衡算法}
-在前面介绍的迭代均衡和译码的主要思想是在均衡器和译码器之间通过传递软信息以迭代的方式进行联合译码检测。如果把卷积码和ISI信道看作是一个串行级联的卷积码(SCCC)\cite{Benedetto1998}，则卷积码就是外码，而把ISI信道看做是内码。在文献\ncite{Benedetto1998}中显示，对于串行级联码仅作为内码是递归卷积码，级联码才有交织增益，而ISI信道是典型的有限脉冲响应(FIR)等效于一个非递归的卷积码，因此，不会获得交织增益，只能通过提高外码编码器的性能改善。
 
-在本节研究通过采用二进制预编码技术，可以使得信道“表现”出递归特性，获得良好的交织增益。作为外码的卷积码编码器就可以使用小的约束长度实现高的编码增益，同时也降低了译码复杂度(与卷积码约束长度相关)。
-
-预编码的记忆长度要小于信道的记忆长度，这样通过二进制预编码后不改变网格状态数，因而并不增加线性均衡器复杂度，而最常用的是查分结构的预编码。
-\begin{figure}[htb]
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{images/diffcoder.pdf}
-  \end{center}
-  \caption{采用预编码的串行级联模型}
-  \label{fig:3.8}
-\end{figure}
-
-文献\ncite{Daly2010}指出，采用预编码后，在低信噪比下，比没采用预编码的线性均衡器性能下降，是由于差错传播的原因。但是随着信噪比的增加，从误码率的下降斜率可以看出，由于获得了交织增益，性能取得了非常明显的改善，甚至比AWGN下的性能有$1-2\mbox{dB}$的增益。
-
-但是考虑到水声通信系统的实际情况，需要保证低信噪比下的信息传输的有效性，而预编码方案在低信噪比下性能反而会更差一些，不满足需求，综合考虑，本文在湖试数据处理的时候采用的Turbo码与MMSE-LE级联的均衡迭代方案。
 \section{本章小结}
 本章详细介绍了基于先验信息MMSE准则的线性Turbo均衡算法以及其近似算法，并为了避免矩阵求逆的操作，介绍了一种递归更新算法，使得运算复杂度大大减少。文中对介绍算法进行仿真，并分析该算法的优劣之处。
 
